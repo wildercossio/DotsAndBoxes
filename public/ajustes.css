@@ -1,0 +1,65 @@
+*{
+    padding: 0;
+    margin: 0;
+}
+
+body{
+    background: #f4f1bb;
+    font-family: cursive;
+}
+
+.playerBox{
+    float: left;
+    width: 110px;
+    height: 50px;
+    padding-top: 25px;
+    margin-left: 50px; 
+    text-align: center; 
+}
+
+
+h1{
+    color:#ff637d;
+    font-size: 40px;
+    text-align: center;
+    margin: 0;
+    font-family: cursive;
+}
+
+table{
+    margin: 50px 50px;
+    width: 700px;
+}
+
+td{
+    padding: 10px;
+}
+::placeholder{
+    font-family: cursive;
+}
+
+
+.divPlay{
+    
+    text-align: center;
+}
+.playButton{
+    padding: 10px;
+    width: 30%;
+    display: inline-block;
+    text-decoration: none;
+    border-radius: 2px;
+    font-size: 18px;
+    color: #000;
+    background: rgb(230, 228, 228);
+    border: 1px solid rgb(148, 143, 143);
+}
+
+
+input{
+    font-family: cursive;
+}
+.addUserButton{
+    margin-left: 30px;
+    width: 30%;
+}

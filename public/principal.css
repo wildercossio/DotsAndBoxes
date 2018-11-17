@@ -1,0 +1,37 @@
+*{
+    padding: 0;
+    margin: 0;
+}
+
+body{
+    background: #f4f1bb;
+}
+h1{
+    animation-iteration-count: infinite;
+    color:#ff637d;
+    font-size: 40px;
+    text-align: center;
+    margin: 30px auto;
+    padding: 30px 30px;
+    font-family: cursive;
+}
+.jugarConLaPc,.jugarConAmigos{
+    background: #5473ba;
+    color: #f4f1bb;
+    width: 25%;
+    text-align: center;
+    display: block;
+    text-decoration: none;
+    margin: 40px auto;
+    padding: 30px 30px;
+    font-size: 25px; 
+    font-family: cursive;
+    border-radius: 15px;
+   
+}
+.jugarConLaPc:hover,.jugarConAmigos:hover{
+   
+    background: #ff637d;
+    color: #f4f1bb;
+    
+}

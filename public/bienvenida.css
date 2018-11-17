@@ -1,0 +1,52 @@
+*{
+    padding: 0;
+    margin: 0;
+    
+}
+
+body{
+    background: #f4f1bb;
+}
+
+h1{
+    color:#ff637d;
+    font-size: 40px;
+    text-align: center;
+    margin: 0;
+    font-family: cursive;
+}
+.dot{
+    animation-iteration-count: infinite;
+    background: url(images/Title.png);
+    background-repeat: no-repeat;
+    background-size: 100%;
+    margin: 25px auto;
+    width: 380px;
+    height: 380px;
+    
+}
+
+.percent-count {
+    width: 100%;
+    margin: 5px auto;
+    font-size: 20px;
+    text-align: center;
+    color: #ff637d;
+    font-family: cursive;
+}
+
+.progress-bar {
+    width: 501px;
+    height: 26px;
+    background-color: #ccc;
+    border-radius: 10px;
+    margin: 15px auto;
+}
+
+.progress {
+    width: 20px;
+    height: 25px;
+    border-radius: 10px; 
+    background-color:#4040ff;
+}
+
