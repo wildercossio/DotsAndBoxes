@@ -1,7 +1,7 @@
 {
   "RSpec": {
     "coverage": {
-      "C:/Users/Wil/Documents/DotsAndBoxes_ultimate/spec/testPlayer_spec.rb": [
+      "C:/Users/Wil/Documents/DotsAndBoxes-1/spec/testPlayer_spec.rb": [
         1,
         1,
         null,
@@ -33,7 +33,7 @@
         null,
         null
       ],
-      "C:/Users/Wil/Documents/DotsAndBoxes_ultimate/lib/Player.rb": [
+      "C:/Users/Wil/Documents/DotsAndBoxes-1/lib/Player.rb": [
         1,
         1,
         5,
@@ -63,6 +63,6 @@
         null
       ]
     },
-    "timestamp": 1542479964
+    "timestamp": 1542480826
   }
 }
