@@ -74,4 +74,8 @@ describe Box do
         @box.paintBox(colorPlayerA)
         expect(@box.getContent).to eq colorPlayerA#se verifica que el contenido de la caja se haya pintado
     end
+    it "Obtener si la caja al ser pintada se lo añadio al puntaje del jugador" do
+        @box.scoreAddedToPlayer
+        expect(@box.getSecoreAdded).to eq true
+    end
 end

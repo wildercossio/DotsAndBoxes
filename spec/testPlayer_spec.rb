@@ -3,7 +3,7 @@ describe Player do
 
     before(:each) do 
         @player=Player.new
-        @player.add("Bronzuna","background:#54ba9b;","X")
+        @player.constructor("Bronzuna","background:#54ba9b;","X")
         #el puntaje inicia siempre en 0
         #el caracter ej "X" existe para diferenciar jugadores con el mismo nombre
         #el color para que el jugador tenga una diferencia visual 
@@ -19,11 +19,11 @@ describe Player do
         expect(@player.getCharacter).to eq "X"
     end
     it "obtener el puntaje inicial de un jugador" do
-        expect(@player.getPoints).to eq 0
+        expect(@player.getScore).to eq 0
     end
     it "incrementar en 1 el puntaje de un jugador" do
-        @player.increasePoints
-        expect(@player.getPoints).to eq 1
+        @player.increaseScore
+        expect(@player.getScore).to eq 1
     end
 
 

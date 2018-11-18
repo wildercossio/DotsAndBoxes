@@ -14,7 +14,15 @@ class Box
 
         @content=""
         @numberCheckLines=0
+        @scoreAdded=false
     end
+    def scoreAddedToPlayer
+        @scoreAdded=true
+    end
+    def getSecoreAdded
+        return @scoreAdded
+    end
+
     def getValueTopLine
         return @topLine.getValue
     end
