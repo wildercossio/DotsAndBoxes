@@ -1,0 +1,96 @@
+*{
+    padding: 0;
+    margin: 0;
+}
+body{
+    background: #f4f1bb;
+    font-family: cursive;
+}
+
+.dots{
+    text-align:center; 
+    padding: 0; 
+}
+h1{ 
+    font-size: 40px;
+    text-align: center;
+    margin: 0;
+    font-family: cursive;
+}
+
+
+.turn{
+    display: inline-block;
+    width: 110px;
+    height: 50px;
+    padding-top: 15px;
+    margin-left: 50px; 
+    text-align: center; 
+}
+.playerBox{
+    display: inline-block;
+    width: 110px;
+    height: 50px;
+    padding-top: 25px;
+    margin-left: 50px; 
+    text-align: center; 
+}
+table{
+    
+    margin: 30px 610px;
+    background: #fff;
+}
+
+.verticalLines{
+    border: transparent;
+    width: 14px;
+    height: 40px;
+    background: transparent; 
+}
+
+.verticalLines:hover{
+    background: url("/images/vertical.png");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 40%;
+
+}
+.horizontalLines{
+    background: transparent; 
+    border: transparent;
+    width: 40px;
+    height: 14px;
+    /* border: 2px solid #000; */
+}
+.horizontal{
+    border: transparent;
+    width: 40px;
+    height: 14px;
+    background: url("/images/linehori.png");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 90%;
+}
+
+.horizontalLines:hover{
+    background: url("/images/horizontal.png");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 100%;
+}
+
+.vertical{
+    border: transparent;
+    width: 14px;
+    height: 40px;
+    background: url("/images/linevert.png");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 50%;
+}
+
+.contentBox{
+    width: 40px;
+    height: 40px;
+}
+

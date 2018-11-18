@@ -1,0 +1,449 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Page Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="main.js"></script>
+    <link rel="stylesheet" type="text/css" media="screen" href="jugarConAmigos.css" />
+
+</head>
+<body>
+    <h1>Jugar con amigos</h1>
+    <div>
+        <%if($turn=="A")%>
+            <div class="turn" style="<%=$players[0].getColor%>">
+                Turno de: <%=$players[0].getName%>
+            </div>
+        <%end%>
+        <%if($turn=="B")%>
+            <div class="turn" style="<%=$players[1].getColor%>">
+                Turno de: <%=$players[1].getName%>
+            </div>
+        <%end%>
+        <%if($turn=="C")%>
+            <div class="turn" style="<%=$players[2].getColor%>">
+                Turno de: <%=$players[2].getName%>
+            </div>
+        <%end%>
+        <%if($turn=="D")%>
+            <div class="turn" style="<%=$players[3].getColor%>">
+                Turno de: <%=$players[3].getName%>
+            </div>
+        <%end%>
+    </div>
+        
+    <div style="text-align: center;">
+        <% for i in(0..($numberPlayers-1))%>
+            <div class="playerBox" style="<%=$players[i].getColor%>">
+                <%=$players[i].getName%>:<%=$players[i].getScore%>
+            </div>
+        <% end %>
+    </div>
+        
+        <table>
+            <tbody>
+                <tr>
+                    <td class="dots">*</td>
+        
+                    <td>
+                        <%if ($value1==1)%>
+                            <form method="post" action="/check1">
+                                <input class="horizontalLines" type="submit" value="">
+                            </form>                
+                        <%else%>
+                            <form method="post" action="/check1">
+                                <input class="horizontal" type="submit" value="" disabled>
+                            </form> 
+                        <%end%>
+                    </td>
+        
+                    <td class="dots">*</td>
+        
+                    <td>
+                        <%if ($value2==2)%>
+                            <form method="post" action="/check2">
+                                <input class="horizontalLines" type="submit" value="">
+                            </form>                
+                        <%else%>
+                            <form method="post" action="/check2">
+                                <input class="horizontal" type="submit" value="" disabled>
+                            </form> 
+                        <%end%>
+                    </td>
+        
+                    <td class="dots">*</td>
+
+                    <td>
+                        <%if ($value3==3)%>
+                            <form method="post" action="/check3">
+                                <input class="horizontalLines" type="submit" value="">
+                            </form>                
+                        <%else%>
+                            <form method="post" action="/check3">
+                                <input class="horizontal" type="submit" value="" disabled>
+                            </form> 
+                        <%end%>
+                    </td>
+        
+                    <td class="dots">*</td>
+                </tr>
+        
+        
+        
+        
+        
+                <tr>
+                    
+                    <td>
+                        <%if($value4==4)%>
+                            <form method="post" action="/check4">
+                                <input class="verticalLines" type="submit" value="">
+                            </form>
+                        <%else%>
+                            <form method="post" action="/check4">
+                                <input class="vertical" type="submit" value="" disabled>
+                            </form>
+                        <%end%>
+                    </td>
+        
+                    <td>
+                        <%if($content1!="")%>
+                            <input  class="contentBox" type="submit" style="<%=$content1%>" value="">
+                        <%end%>
+                    </td>
+                    
+                    <td>
+                        <%if($value5==5)%>
+                            <form method="post" action="/check5">
+                                <input class="verticalLines" type="submit" value="">
+                            </form>
+                        <%else%>
+                            <form method="post" action="/check5">
+                                <input class="vertical" type="submit" value="" disabled>
+                            </form>
+                        <%end%>
+                    </td>
+        
+        
+                    <td>
+                        <%if($content2!="")%>
+                            <input  class="contentBox" type="submit" style="<%=$content2%>" value="">
+                        <%end%>
+                    </td>
+                    
+                    <td>
+                        <%if($value6==6)%>
+                            <form method="post" action="/check6">
+                                <input class="verticalLines" type="submit" value="">
+                            </form>
+                        <%else%>
+                            <form method="post" action="/check6">
+                                <input class="vertical" type="submit" value="" disabled>
+                            </form>
+                        <%end%>
+                    </td>
+
+                    <td>
+                        <%if($content3!="")%>
+                            <input  class="contentBox" type="submit"  style="<%=$content3%>" value="">
+                        <%end%>
+                    </td>
+                    
+                    <td>
+                        <%if($value7==7)%>
+                            <form method="post" action="/check7">
+                                <input class="verticalLines" type="submit" value="">
+                            </form>
+                        <%else%>
+                            <form method="post" action="/check7">
+                                <input class="vertical" type="submit" value="" disabled>
+                            </form>
+                        <%end%>
+                    </td>
+                   
+                </tr>
+        
+        
+        
+        
+                <tr>
+                    <td class="dots">*</td>
+                    <td>
+                        <%if($value8==8)%>
+                            <form method="post" action="/check8">
+                                <input class="horizontalLines" type="submit" value="">
+                            </form>
+                        <%else%>
+                            <form method="post" action="/check8">
+                                <input class="horizontal" type="submit" value="" disabled>
+                            </form>
+                        <%end%>
+                    </td>
+                    <td class="dots">*</td>
+        
+                    <td>
+                        <%if($value9==9)%>
+                            <form method="post" action="/check9">
+                                <input class="horizontalLines" type="submit" value="">
+                            </form>
+                        <%else%>
+                            <form method="post" action="/check9">
+                                <input class="horizontal" type="submit" value="" disabled>
+                            </form>
+                        <%end%>
+                    </td>
+                    <td class="dots">*</td>
+
+                    <td>
+                        <%if($value10==10)%>
+                            <form method="post" action="/check10">
+                                <input class="horizontalLines" type="submit" value="">
+                            </form>
+                        <%else%>
+                            <form method="post" action="/check10">
+                                <input class="horizontal" type="submit" value="" disabled>
+                            </form>
+                        <%end%>
+                    </td>
+                    <td class="dots">*</td>
+                </tr>
+        
+        
+        
+        
+        
+            <tr>
+                <td>
+                    <%if($value11==11)%>
+                        <form method="post" action="/check11">
+                            <input class="verticalLines" type="submit" value="">
+                        </form>
+                    <%else%>
+                        <form method="post" action="/check11">
+                            <input class="vertical" type="submit" value="" disabled>
+                        </form>
+                    <%end%>
+                </td>
+        
+                <td>
+                    <%if($content4!="")%>
+                        <input class="contentBox" type="submit"  style="<%=$content4%>" value="">
+                    <%end%>
+                </td>
+        
+                <td>
+                    <%if($value12==12)%>
+                        <form method="post" action="/check12">
+                            <input class="verticalLines" type="submit" value="">
+                        </form>
+                    <%else%>
+                        <form method="post" action="/check12">
+                            <input class="vertical" type="submit" value="" disabled>
+                        </form>
+                    <%end%>
+                </td>
+        
+                <td>
+                    <%if($content5!="")%>
+                        <input class="contentBox" type="submit"  style="<%=$content5%>" value="">
+                    <%end%>
+                </td>
+        
+                <td>
+                    <%if($value13==13)%>
+                        <form method="post" action="/check13">
+                            <input class="verticalLines" type="submit" value="">
+                        </form>
+                    <%else%>
+                        <form method="post" action="/check13">
+                            <input class="vertical" type="submit" value="" disabled>
+                        </form>
+                    <%end%>
+                </td>
+
+                <td>
+                    <%if($content6!="")%>
+                        <input class="contentBox" type="submit"  style="<%=$content6%>" value="">
+                    <%end%>
+                </td>
+        
+                <td>
+                    <%if($value14==14)%>
+                        <form method="post" action="/check14">
+                            <input class="verticalLines" type="submit" value="">
+                        </form>
+                    <%else%>
+                        <form method="post" action="/check14">
+                            <input class="vertical" type="submit" value="" disabled>
+                        </form>
+                    <%end%>
+                </td>
+            </tr>
+        
+        
+        
+            <tr>
+                <td class="dots">*</td>
+                <td>
+                    <%if($value15==15)%>
+                        <form method="post" action="/check15">
+                            <input class="horizontalLines" type="submit" value="">
+                        </form>
+                    <%else%>
+                        <form method="post" action="/check15">
+                            <input class="horizontal" type="submit" value="" disabled>
+                        </form>
+                    <%end%>
+                </td>
+                <td class="dots">*</td>
+        
+                <td>
+                    <%if($value16==16)%>
+                        <form method="post" action="/check16">
+                            <input class="horizontalLines" type="submit" value="">
+                        </form>
+                    <%else%>
+                        <form method="post" action="/check16">
+                            <input class="horizontal" type="submit" value="" disabled>
+                        </form>
+                    <%end%>
+                </td>
+                <td class="dots">*</td>
+
+                <td>
+                    <%if($value17==17)%>
+                        <form method="post" action="/check17">
+                            <input class="horizontalLines" type="submit" value="">
+                        </form>
+                    <%else%>
+                        <form method="post" action="/check17">
+                            <input class="horizontal" type="submit" value="" disabled>
+                        </form>
+                    <%end%>
+                </td>
+                <td class="dots">*</td>
+            </tr>
+
+            <tr>
+                <td>
+                    <%if($value18==18)%>
+                        <form method="post" action="/check18">
+                            <input class="verticalLines" type="submit" value="">
+                        </form>
+                    <%else%>
+                        <form method="post" action="/check18">
+                            <input class="vertical" type="submit" value="" disabled>
+                        </form>
+                    <%end%>
+                </td>
+
+                <td>
+                    <%if($content7!="")%>
+                        <input class="contentBox" type="submit"  style="<%=$content7%>" value="">
+                    <%end%>
+                </td>
+
+                <td>
+                    <%if($value19==19)%>
+                        <form method="post" action="/check19">
+                            <input class="verticalLines" type="submit" value="">
+                        </form>
+                    <%else%>
+                        <form method="post" action="/check19">
+                            <input class="vertical" type="submit" value="" disabled>
+                        </form>
+                    <%end%>
+                </td>
+
+                <td>
+                    <%if($content8!="")%>
+                        <input class="contentBox" type="submit"  style="<%=$content8%>" value="">
+                    <%end%>
+                </td>
+
+                <td>
+                    <%if($value20==20)%>
+                        <form method="post" action="/check20">
+                            <input class="verticalLines" type="submit" value="">
+                        </form>
+                    <%else%>
+                        <form method="post" action="/check20">
+                            <input class="vertical" type="submit" value="" disabled>
+                        </form>
+                    <%end%>
+                </td>
+
+                <td>
+                    <%if($content9!="")%>
+                        <input class="contentBox" type="submit"  style="<%=$content9%>" value="">
+                    <%end%>
+                </td>
+
+                <td>
+                    <%if($value21==21)%>
+                        <form method="post" action="/check21">
+                            <input class="verticalLines" type="submit" value="">
+                        </form>
+                    <%else%>
+                        <form method="post" action="/check21">
+                            <input class="vertical" type="submit" value="" disabled>
+                        </form>
+                    <%end%>
+                </td>
+            </tr>
+
+            <tr>
+                <td class="dots">*</td>
+            
+                <td>
+                    <%if ($value22==22)%>
+                        <form method="post" action="/check22">
+                            <input class="horizontalLines" type="submit" value="">
+                        </form>                
+                    <%else%>
+                        <form method="post" action="/check22">
+                            <input class="horizontal" type="submit" value="" disabled>
+                        </form> 
+                    <%end%>
+                </td>
+
+                <td class="dots">*</td>
+
+                <td>
+                    <%if ($value23==23)%>
+                        <form method="post" action="/check23">
+                            <input class="horizontalLines" type="submit" value="">
+                        </form>                
+                    <%else%>
+                        <form method="post" action="/check23">
+                            <input class="horizontal" type="submit" value="" disabled>
+                        </form> 
+                    <%end%>
+                </td>
+
+                <td class="dots">*</td>
+
+                <td>
+                
+                    <%if ($value24==24)%>
+                        <form method="post" action="/check24">
+                            <input class="horizontalLines" type="submit" value="">
+                        </form>                
+                    <%else%>
+                        <form method="post" action="/check24">
+                            <input class="horizontal" type="submit" value="" disabled>
+                        </form> 
+                    <%end%>
+                </td>
+
+                <td class="dots">*</td>
+            </tr>
+        
+            </tbody>
+        </table>
+</body>
+</html>
+
+

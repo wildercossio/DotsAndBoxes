@@ -1,3 +1,6 @@
+require "./lib/Box"
+require "./lib/Player"
+require "./lib/Line"
 class Board
     def constructor(numberOfPlayers,settings)
         @width=0
@@ -139,17 +142,17 @@ class Board
                 colorPlayer1=@players[0].getColor
                 colorPlayer2=@players[1].getColor
 
-                if(@numberPlayers==3)
+                if(@numberOfPlayers==3)
                     colorPlayer3=@players[2].getColor
                 end
-                if(@numberPlayers==4)
+                if(@numberOfPlayers==4)
                     colorPlayer3=@players[2].getColor
                     colorPlayer4=@players[3].getColor
                 end
                 if(@boxes[row][col].getContent==colorPlayer1 && @boxes[row][col].getSecoreAdded==false)
                     @players[0].increaseScore
                     @boxes[row][col].scoreAddedToPlayer
-                    case @numberPlayers
+                    case @numberOfPlayers
                     when 2
                         @player="B"#colocamos otra vez B para que el 2do jugador(A) tenga otro turno
                         @playerColor=@players[1].getColor
@@ -170,7 +173,7 @@ class Board
                     @playerColor=@players[0].getColor
                 end
 
-                if(@numberPlayers==3)
+                if(@numberOfPlayers==3)
                     if(@boxes[row][col].getContent==colorPlayer3 && @boxes[row][col].getSecoreAdded==false)
                         @players[2].increaseScore
                         @boxes[row][col].scoreAddedToPlayer
@@ -178,7 +181,7 @@ class Board
                         @playerColor=@players[1].getColor
                     end
                 end
-                if(@numberPlayers==4)
+                if(@numberOfPlayers==4)
                     if(@boxes[row][col].getContent==colorPlayer3 && @boxes[row][col].getSecoreAdded==false)
                         @players[2].increaseScore
                         @boxes[row][col].scoreAddedToPlayer
