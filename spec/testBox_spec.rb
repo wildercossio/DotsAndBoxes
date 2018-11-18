@@ -24,8 +24,8 @@ describe Box do
     end
 
     it "Verificar que los valores enviados, si existan en una caja" do
-        value1=1#son valores que pueden o no pertencer a una linea de la caja, en este caso todos pertenecen
-        value2=2
+        value1=1#son valores que pueden o no pertencer a una linea de la caja
+        value2=2#en este caso esta caja si contiene los 4 valores
         value3=3
         value4=4
         expect(@box.isHere(value1)).to eq true
@@ -33,6 +33,9 @@ describe Box do
         expect(@box.isHere(value3)).to eq true
         expect(@box.isHere(value4)).to eq true
     end
-
+    it "Verificar que el valor enviado, no exista en una caja" do
+        value=5
+        expect(@box.isHere(value)).to eq false
+    end
 
 end
