@@ -44,6 +44,6 @@ class Board
                 end
             end
         end
-        return 0
+        return "doesNotExist"
     end
 end

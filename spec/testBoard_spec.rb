@@ -28,4 +28,16 @@ describe Board do
         value=24
         expect(@board.getLine(value)).to eq 24
     end
+    it "Buscar el valor de una linea inexistente en el tablero, deberia obtener 0 por no encontrarla" do
+        width=3
+        height=3
+        @board.generateBoard(width,height)
+        #como el tablero es de 3x3 entonces se tiene 9 cajas
+        #entonces se tendria 9x4 =36 lineas 
+        #entre las que 12 lineas comparten el mismo valor 
+        #por tanto se tiene 24 lineas diferentes
+        value=25#no existe
+        expect(@board.getLine(value)).to eq "doesNotExist"
+    end
+
 end
