@@ -6,4 +6,7 @@ class Line
     def getValue
         return @value
     end
+    def getId
+        return @id
+    end
 end
