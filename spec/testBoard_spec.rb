@@ -1,15 +1,27 @@
 require "./lib/Board"
+require "./lib/Settings"
 describe Board do
-    before(:each) do
-        @board=Board.new
-        @board.constructor
-    end
+    
     it "Verificar que el tamaño inicial del tablero es 0 x 0" do
+        @board=Board.new
+        settings=Settings.new
+        settings.constructor
+        settings.addPlayer("Rosendo")
+        settings.addPlayer("Benacio")
+        @board.constructor(2,settings)
+
         expect(@board.getWidth).to eq 0
         expect(@board.getHeight).to eq 0
     end
 
     it "Generar matriz del tablero" do
+        @board=Board.new
+        settings=Settings.new
+        settings.constructor
+        settings.addPlayer("Rosendo")
+        settings.addPlayer("Benacio")
+        @board.constructor(2,settings)
+
         width=3
         height=3
         @board.generateBoard(width,height)
@@ -19,6 +31,13 @@ describe Board do
         #que el tamaño sea en el que se definio
     end
     it "Buscar el valor de una linea existente en el tablero(matriz de cajas)" do
+        @board=Board.new
+        settings=Settings.new
+        settings.constructor
+        settings.addPlayer("Rosendo")
+        settings.addPlayer("Benacio")
+        @board.constructor(2,settings)
+
         width=3
         height=3
         @board.generateBoard(width,height)
@@ -30,6 +49,13 @@ describe Board do
         expect(@board.getLine(value)).to eq 24
     end
     it "Buscar el valor de una linea inexistente en el tablero, deberia obtener 0 por no encontrarla" do
+        @board=Board.new
+        settings=Settings.new
+        settings.constructor
+        settings.addPlayer("Rosendo")
+        settings.addPlayer("Benacio")
+        @board.constructor(2,settings)
+
         width=3
         height=3
         @board.generateBoard(width,height)
@@ -40,14 +66,36 @@ describe Board do
         value=25#no existe
         expect(@board.getLine(value)).to eq "doesNotExist"
     end
-    it "Marcar una linea de una caja como primer jugador" do
+    it "Cambiar de turno ciclo completo con 2 jugadores" do
+        @board=Board.new
+        settings=Settings.new
+        settings.constructor
+        settings.addPlayer("Rosendo")
+        settings.addPlayer("Benacio")
+        @board.constructor(2,settings)
+        #como inicialmente es el turno del jugador A ahora deberia ser de B
+        @board.turnOf
+        expect(@board.getTurn).to eq "B"
+        #como ahora es turno de jugador B deberia cambiar a jugador A
+        @board.turnOf
+        expect(@board.getTurn).to eq "A"
+    end
+
+    it "jugar con dos jugadores" do
+        @board=Board.new
+        settings=Settings.new
+        settings.constructor
+        settings.addPlayer("Rosendo")
+        settings.addPlayer("Benacio")
+        @board.constructor(2,settings)
+
         width=3
         height=3
         @board.generateBoard(width,height)
         value=21
         @board.checkLine(value)#como es primera jugada le pertenece al jugador A
-        expect(@board.getLine(21)).to eq "A"
+        expect(@board.getLine(value)).to eq "A"
     end
-    
 
+    
 end

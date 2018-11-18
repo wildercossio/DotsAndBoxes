@@ -1,9 +1,20 @@
 class Board
-    def constructor
+    def constructor(numberOfPlayers,settings)
         @width=0
         @height=0
-        @characterPlayer="A"
+        @players=settings.getPlayersAdded
+        @player=@players[0].getCharacter
+        @playerColor=@players[0].getColor
+        @numberOfPlayers=numberOfPlayers
     end
+    def getTurn
+        return @player
+    end
+
+    def getNumberOfPlayers
+        return @numberOfPlayers
+    end
+
     def getWidth
         return @width
     end
@@ -52,9 +63,58 @@ class Board
         for row in(0..(@height-1))
             for col in(0..(@width-1))
                 if(@boxes[row][col].isHere(value)==true)
-                    @boxes[row][col].checkLine(value,@characterPlayer)
+                    @boxes[row][col].checkLine(value,@player)
                 end
             end
         end
+    end
+    def turnOf
+        case @numberOfPlayers
+        when 2
+            playWith2players
+        when 3
+            playWith3players
+        when 4
+            playWith4players
+        end
+    end
+    def playWith2players
+        case @player
+        when "A"
+            @player="B"
+            @playerColor=@players[1].getColor
+        when "B"
+            @player="A"
+            @playerColor=@players[0].getColor
+        end
+    end
+    def playWith3players
+        case @player
+        when "A"
+            @player="B"
+            @playerColor=@players[1].getColor
+        when "B"
+            @player="C"
+            @playerColor=@players[2].getColor 
+        when "C"
+            @player="A"
+            @playerColor=@players[0].getColor 
+        end  
+    end
+    def playWith4players
+        case @player
+        when "A"
+            @player="B"
+            @playerColor=@players[1].getColor
+        when "B"
+            @player="C"
+            @playerColor=@players[2].getColor 
+        when "C"
+            @player="D"
+            @playerColor=@players[3].getColor
+        when "D"
+            @player="A"
+            @playerColor=@players[0].getColor  
+        end 
     end
 end
