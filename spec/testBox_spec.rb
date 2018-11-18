@@ -54,4 +54,14 @@ describe Box do
     it "Obtener la cantidad inicial 0 de lineas marcadas" do
         expect(@box.getNumberCheckLines).to eq 0
     end
+    it "Incrementar en 1 la cantidad de lineas marcadas" do
+        @box.increaseNumberCheckLines
+        expect(@box.getNumberCheckLines).to eq 1
+    end
+    it "Pintar el contenido de una caja al marcar sus 4 lineas" do
+        colorPlayer="background:#54ba9b;"# es el color verde
+        @box.paintBox(colorPlayer)
+        expect(@box.getContent).to eq colorPlayer#se verifica que el contenido de la caja se haya pintado
+    end
+
 end

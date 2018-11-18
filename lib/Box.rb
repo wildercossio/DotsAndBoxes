@@ -87,4 +87,12 @@ class Box
     def getNumberCheckLines
         return @numberCheckLines
     end
+
+    def increaseNumberCheckLines
+        @numberCheckLines+=1
+    end
+
+    def paintBox(colorPlayer)
+        @content=colorPlayer
+    end
 end
