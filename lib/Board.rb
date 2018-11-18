@@ -2,6 +2,7 @@ class Board
     def constructor
         @width=0
         @height=0
+        @characterPlayer="A"
     end
     def getWidth
         return @width
@@ -45,5 +46,15 @@ class Board
             end
         end
         return "doesNotExist"
+    end
+
+    def checkLine(value)
+        for row in(0..(@height-1))
+            for col in(0..(@width-1))
+                if(@boxes[row][col].isHere(value)==true)
+                    @boxes[row][col].checkLine(value,@characterPlayer)
+                end
+            end
+        end
     end
 end

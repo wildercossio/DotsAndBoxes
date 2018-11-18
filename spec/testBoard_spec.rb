@@ -15,7 +15,8 @@ describe Board do
         @board.generateBoard(width,height)
         expect(@board.getWidth).to eq 3
         expect(@board.getHeight).to eq 3
-        #no supe como verificar que una matriz sea generada, solo compruebo que el tamaño sea en el que se definio
+        #no supe como verificar que una matriz sea generada,por lo tanto solo compruebo 
+        #que el tamaño sea en el que se definio
     end
     it "Buscar el valor de una linea existente en el tablero(matriz de cajas)" do
         width=3
@@ -39,5 +40,14 @@ describe Board do
         value=25#no existe
         expect(@board.getLine(value)).to eq "doesNotExist"
     end
+    it "Marcar una linea de una caja como primer jugador" do
+        width=3
+        height=3
+        @board.generateBoard(width,height)
+        value=21
+        @board.checkLine(value)#como es primera jugada le pertenece al jugador A
+        expect(@board.getLine(21)).to eq "A"
+    end
+    
 
 end
