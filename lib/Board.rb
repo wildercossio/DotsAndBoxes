@@ -117,4 +117,16 @@ class Board
             @playerColor=@players[0].getColor  
         end 
     end
+
+    def getContent(row,col)
+        return @boxes[row][col].getContent
+    end
+
+    def paintBoxes        
+        for row in(0..(@height-1))
+            for col in(0..(@width-1))
+                @boxes[row][col].paintBox(@playerColor)
+            end
+        end
+    end
 end

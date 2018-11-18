@@ -3,6 +3,7 @@ class Settings
         @playersAdded=Array.new
         @numberPlayers=0
         @colors=["background:#54ba9b;","background:#ff637d;","background:#5473ba;","background:#ba54a6;"]
+         #[verde,rojo,azul,lila]
         @characters=["A","B","C","D"]
     end
     def addPlayer(name)

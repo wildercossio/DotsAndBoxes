@@ -211,4 +211,64 @@ describe Board do
         @board.checkLine(value)#ahora la cassilla pertenece al jugador D
         expect(@board.getLine(value)).to eq "D"
     end
+
+    it "obtener el contenido de cada caja del tablero, deberia ser una cadena vacia" do
+        @board=Board.new
+        settings=Settings.new
+        settings.constructor
+        settings.addPlayer("Natalia")
+        settings.addPlayer("Tatiana")
+        @board.constructor(2,settings)
+        width=3
+        height=3
+        @board.generateBoard(width,height)
+
+
+        for row in(0..(height-1))
+            for col in(0..(width-1))
+                expect(@board.getContent(row,col)).to eq ""
+            end
+        end
+    end
+
+    it "Pintar las cajas con el color del jugador que marco la ultima linea libre" do
+        @board=Board.new
+        settings=Settings.new
+        settings.constructor
+        settings.addPlayer("Natalia")
+        settings.addPlayer("Tatiana")
+        @board.constructor(2,settings)
+
+        width=3
+        height=3
+        @board.generateBoard(width,height)
+        value=1
+        expect(@board.getTurn).to eq "A" #verificamos que el turno sea de jugador A
+
+        @board.checkLine(value)#ahora la cassilla pertenece al jugador A
+        expect(@board.getLine(value)).to eq "A"
+        
+        @board.turnOf
+        value=4
+        @board.checkLine(value)#ahora la cassilla pertenece al jugador B
+        expect(@board.getLine(value)).to eq "B"
+
+        @board.turnOf
+        value=5
+        @board.checkLine(value)#ahora la cassilla pertenece al jugador A
+        expect(@board.getLine(value)).to eq "A"
+
+        @board.turnOf
+        value=8
+        @board.checkLine(value)#ahora la cassilla pertenece al jugador B
+        expect(@board.getLine(value)).to eq "B"
+
+        #por el tamaño de nuestro tablero la primera caja[0][0] tendria las lineas 1 4 5 8 
+        #B fue el jugador que marco la ultima linea libre de la caja
+        # por tanto el contenido de la casilla se vuelve de B
+        @board.paintBoxes
+        # se revisa que cajas tienen las 4 lineas marcadas y se las pinta del correspondiente al jugador
+        red="background:#ff637d;"
+        expect(@board.getContent(0,0)).to eq red
+    end
 end
