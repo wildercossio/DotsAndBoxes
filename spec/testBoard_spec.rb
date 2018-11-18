@@ -14,6 +14,17 @@ describe Board do
         expect(@board.getHeight).to eq 0
     end
 
+    it "Obtener el numero de jugadores" do
+        @board=Board.new
+        settings=Settings.new
+        settings.constructor
+        settings.addPlayer("Rosendo")
+        settings.addPlayer("Benacio")
+        settings.addPlayer("Natalia")
+        settings.addPlayer("Tatiana")
+        @board.constructor(4,settings)
+        expect(@board.getNumberOfPlayers).to eq 4
+    end
     it "Generar matriz del tablero" do
         @board=Board.new
         settings=Settings.new
@@ -270,5 +281,48 @@ describe Board do
         # se revisa que cajas tienen las 4 lineas marcadas y se las pinta del correspondiente al jugador
         red="background:#ff637d;"
         expect(@board.getContent(0,0)).to eq red
+    end
+
+    it "Incrementar el puntaje del jugador por caja pintada y dar un turno extra" do 
+        @board=Board.new
+        settings=Settings.new
+        settings.constructor
+        settings.addPlayer("Natalia")
+        settings.addPlayer("Tatiana")
+        @board.constructor(2,settings)
+
+        width=3
+        height=3
+        @board.generateBoard(width,height)
+        value=1
+        expect(@board.getTurn).to eq "A" #verificamos que el turno sea de jugador A
+
+        @board.checkLine(value)#ahora la cassilla pertenece al jugador A
+        expect(@board.getLine(value)).to eq "A"
+        
+        @board.turnOf
+        value=4
+        @board.checkLine(value)#ahora la cassilla pertenece al jugador B
+        expect(@board.getLine(value)).to eq "B"
+
+        @board.turnOf
+        value=5
+        @board.checkLine(value)#ahora la cassilla pertenece al jugador A
+        expect(@board.getLine(value)).to eq "A"
+
+        @board.turnOf
+        value=8
+        @board.checkLine(value)#ahora la cassilla pertenece al jugador B
+        expect(@board.getLine(value)).to eq "B"
+
+        #por el tamaño de nuestro tablero la primera caja[0][0] tendria las lineas 1 4 5 8 
+        #B fue el jugador que marco la ultima linea libre de la caja
+        # por tanto el contenido de la casilla se vuelve de B
+        @board.paintBoxes
+        # se revisa que cajas tienen las 4 lineas marcadas y se las pinta del correspondiente al jugador
+        playerB=2
+        expect(@board.getScoreOf(playerB)).to eq 0#incialmente su score esta en 0
+        @board.calculteScore
+       expect(@board.getScoreOf(playerB)).to eq 1#el puntaje del jugador B se incremento en 1
     end
 end

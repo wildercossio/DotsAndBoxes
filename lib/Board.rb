@@ -7,6 +7,9 @@ class Board
         @playerColor=@players[0].getColor
         @numberOfPlayers=numberOfPlayers
     end
+    def getScoreOf(pos)
+        return @players[pos-1].getScore
+    end
     def getTurn
         return @player
     end
@@ -126,6 +129,70 @@ class Board
         for row in(0..(@height-1))
             for col in(0..(@width-1))
                 @boxes[row][col].paintBox(@playerColor)
+            end
+        end
+    end
+    def calculteScore
+        for row in(0..(@height-1))
+            for col in(0..(@width-1))
+
+                colorPlayer1=@players[0].getColor
+                colorPlayer2=@players[1].getColor
+
+                if(@numberPlayers==3)
+                    colorPlayer3=@players[2].getColor
+                end
+                if(@numberPlayers==4)
+                    colorPlayer3=@players[2].getColor
+                    colorPlayer4=@players[3].getColor
+                end
+                if(@boxes[row][col].getContent==colorPlayer1 && @boxes[row][col].getSecoreAdded==false)
+                    @players[0].increaseScore
+                    @boxes[row][col].scoreAddedToPlayer
+                    case @numberPlayers
+                    when 2
+                        @player="B"#colocamos otra vez B para que el 2do jugador(A) tenga otro turno
+                        @playerColor=@players[1].getColor
+                    when 3
+                        @player="C"
+                        @playerColor=@players[2].getColor
+                    when 4
+                        @player="D"
+                        @playerColor=@players[3].getColor
+                    end
+
+                    
+                end
+                if(@boxes[row][col].getContent==colorPlayer2 && @boxes[row][col].getSecoreAdded==false)
+                    @players[1].increaseScore
+                    @boxes[row][col].scoreAddedToPlayer
+                    @player="A"
+                    @playerColor=@players[0].getColor
+                end
+
+                if(@numberPlayers==3)
+                    if(@boxes[row][col].getContent==colorPlayer3 && @boxes[row][col].getSecoreAdded==false)
+                        @players[2].increaseScore
+                        @boxes[row][col].scoreAddedToPlayer
+                        @player="B"
+                        @playerColor=@players[1].getColor
+                    end
+                end
+                if(@numberPlayers==4)
+                    if(@boxes[row][col].getContent==colorPlayer3 && @boxes[row][col].getSecoreAdded==false)
+                        @players[2].increaseScore
+                        @boxes[row][col].scoreAddedToPlayer
+                        @player="B"
+                        @playerColor=@players[1].getColor
+                    end
+                    if(@boxes[row][col].getContent==colorPlayer4 && @boxes[row][col].getSecoreAdded==false)
+                        @players[3].increaseScore
+                        @boxes[row][col].scoreAddedToPlayer
+                        @player="C"
+                        @playerColor=@players[2].getColor
+                    end
+                end
+                
             end
         end
     end
