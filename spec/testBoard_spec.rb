@@ -138,8 +138,16 @@ describe Board do
         height=3
         @board.generateBoard(width,height)
         value=21
-        @board.checkLine(value)#como es primera jugada le pertenece al jugador A
+        expect(@board.getTurn).to eq "A" #verificamos que el turno sea de jugador A
+
+        @board.checkLine(value)#ahora la cassilla pertenece al jugador A
         expect(@board.getLine(value)).to eq "A"
+        
+        @board.turnOf
+        value=4
+        @board.checkLine(value)#ahora la cassilla pertenece al jugador B
+        expect(@board.getLine(value)).to eq "B"
+
     end
 
     
