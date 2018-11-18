@@ -17,4 +17,15 @@ describe Board do
         expect(@board.getHeight).to eq 3
         #no supe como verificar que una matriz sea generada, solo compruebo que el tamaño sea en el que se definio
     end
+    it "Buscar el valor de una linea existente en el tablero(matriz de cajas)" do
+        width=3
+        height=3
+        @board.generateBoard(width,height)
+        #como el tablero es de 3x3 entonces se tiene 9 cajas
+        #entonces se tendria 9x4 =36 lineas 
+        #entre las que 12 lineas comparten el mismo valor 
+        #por tanto se tiene 24 lineas diferentes
+        value=24
+        expect(@board.getLine(value)).to eq 24
+    end
 end

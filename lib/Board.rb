@@ -35,4 +35,15 @@ class Board
             bottom=right+@width
         end
     end
+
+    def getLine(value)
+        for row in(0..(@height-1))
+            for col in(0..(@width-1))
+                if(@boxes[row][col].isHere(value)==true)
+                    return @boxes[row][col].getLine(value)
+                end
+            end
+        end
+        return 0
+    end
 end
