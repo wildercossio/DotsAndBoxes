@@ -23,7 +23,7 @@ describe Box do
         expect(@box.getIdBottomLine).to eq 4
     end
 
-    it "Verificar que los valores enviados, si existan en una caja" do
+    it "Verificar que los 4 valores enviados, si pertenezcan a una caja" do
         value1=1#son valores que pueden o no pertencer a una linea de la caja
         value2=2#en este caso esta caja si contiene los 4 valores
         value3=3
@@ -38,4 +38,7 @@ describe Box do
         expect(@box.isHere(value)).to eq false
     end
 
+    it "Obtener el contenido de una caja y que sea vacio" do
+        expect(@box.getContent).to eq ""
+    end
 end

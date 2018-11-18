@@ -57,4 +57,7 @@ class Box
         return answer
     end
     
+    def getContent
+        return ""
+    end
 end
