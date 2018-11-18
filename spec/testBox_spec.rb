@@ -23,17 +23,11 @@ describe Box do
         expect(@box.getIdBottomLine).to eq 4
     end
 
-    it "Verificar que los 4 valores enviados, si pertenezcan a una caja" do
-        value1=1#son valores que pueden o no pertencer a una linea de la caja
-        value2=2#en este caso esta caja si contiene los 4 valores
-        value3=3
-        value4=4
-        expect(@box.isHere(value1)).to eq true
-        expect(@box.isHere(value2)).to eq true
+    it "Verificar que el valor enviado, si pertenezcan a una caja" do
+        value3=3#son valores que pueden o no pertencer a una linea de la caja
         expect(@box.isHere(value3)).to eq true
-        expect(@box.isHere(value4)).to eq true
     end
-    it "Verificar que el valor enviado, no exista en una caja" do
+    it "Verificar que el valor enviado, no pertenezca a una caja" do
         value=5
         expect(@box.isHere(value)).to eq false
     end
@@ -50,5 +44,14 @@ describe Box do
         #en caso de haber jugadores con el mismo nombre
         expect(@box.getContent).to eq "A" 
     end
-    
+
+    it "Obtener el valor una linea en especifico, verificando que pertenezca a una caja" do
+        value=2
+        if(@box.isHere(value)==true)
+            expect(@box.getLine(value)).to eq 2
+        end
+    end
+    it "Obtener la cantidad inicial 0 de lineas marcadas" do
+        expect(@box.getNumberCheckLines).to eq 0
+    end
 end

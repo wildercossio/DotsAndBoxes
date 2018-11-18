@@ -13,6 +13,7 @@ class Box
         @bottomLine.constructor(bottom)
 
         @content=""
+        @numberCheckLines=0
     end
     def getValueTopLine
         return @topLine.getValue
@@ -64,5 +65,26 @@ class Box
     end
     def setContent(newContent)
         @content=newContent
+    end
+
+    def getLine(value)
+        top=getIdTopLine
+        left=getIdLeftLine
+        right=getIdRightLine
+        bottom=getIdBottomLine
+        case value
+        when top
+            getValueTopLine
+        when left
+            getValueLeftLine
+        when right
+            getValueRightLine
+        when bottom
+            getValueBottomLine
+        end
+    end
+
+    def getNumberCheckLines
+        return @numberCheckLines
     end
 end
