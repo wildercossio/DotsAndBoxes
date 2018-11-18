@@ -54,6 +54,7 @@ class Box
         when bottom
             answer=true
         end
+        return answer
     end
     
 end
