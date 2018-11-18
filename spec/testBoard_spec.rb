@@ -73,10 +73,31 @@ describe Board do
         settings.addPlayer("Rosendo")
         settings.addPlayer("Benacio")
         @board.constructor(2,settings)
+        expect(@board.getTurn).to eq "A"
         #como inicialmente es el turno del jugador A ahora deberia ser de B
         @board.turnOf
         expect(@board.getTurn).to eq "B"
         #como ahora es turno de jugador B deberia cambiar a jugador A
+        @board.turnOf
+        expect(@board.getTurn).to eq "A"
+    end
+
+    it "Cambiar de turno ciclo completo con 3 jugadores" do
+        @board=Board.new
+        settings=Settings.new
+        settings.constructor
+        settings.addPlayer("Rosendo")
+        settings.addPlayer("Benacio")
+        settings.addPlayer("Natalia")
+        @board.constructor(3,settings)
+        expect(@board.getTurn).to eq "A"
+        #como inicialmente es el turno del jugador A ahora deberia ser de B
+        @board.turnOf
+        expect(@board.getTurn).to eq "B"
+        #como ahora es turno de jugador B deberia cambiar a jugador A
+        @board.turnOf
+        expect(@board.getTurn).to eq "C"
+        #como ahora es turno de jugador C deberia cambiar a jugador A
         @board.turnOf
         expect(@board.getTurn).to eq "A"
     end
