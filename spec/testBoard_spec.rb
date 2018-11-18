@@ -94,10 +94,34 @@ describe Board do
         #como inicialmente es el turno del jugador A ahora deberia ser de B
         @board.turnOf
         expect(@board.getTurn).to eq "B"
-        #como ahora es turno de jugador B deberia cambiar a jugador A
+        #como ahora es turno de jugador B deberia cambiar a jugador C
         @board.turnOf
         expect(@board.getTurn).to eq "C"
         #como ahora es turno de jugador C deberia cambiar a jugador A
+        @board.turnOf
+        expect(@board.getTurn).to eq "A"
+    end
+
+    it "Cambiar de turno ciclo completo con 4 jugadores" do
+        @board=Board.new
+        settings=Settings.new
+        settings.constructor
+        settings.addPlayer("Rosendo")
+        settings.addPlayer("Benacio")
+        settings.addPlayer("Natalia")
+        settings.addPlayer("Tatiana")
+        @board.constructor(4,settings)
+        expect(@board.getTurn).to eq "A"
+        #como inicialmente es el turno del jugador A ahora deberia ser de B
+        @board.turnOf
+        expect(@board.getTurn).to eq "B"
+        #como ahora es turno de jugador B deberia cambiar a jugador C
+        @board.turnOf
+        expect(@board.getTurn).to eq "C"
+        #como ahora es turno de jugador C deberia cambiar a jugador D
+        @board.turnOf
+        expect(@board.getTurn).to eq "D"
+         #como ahora es turno de jugador D deberia cambiar a jugador A
         @board.turnOf
         expect(@board.getTurn).to eq "A"
     end
