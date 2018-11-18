@@ -149,6 +149,33 @@ describe Board do
         expect(@board.getLine(value)).to eq "B"
 
     end
+    it "jugar con tres jugadores" do
+        @board=Board.new
+        settings=Settings.new
+        settings.constructor
+        settings.addPlayer("Rosendo")
+        settings.addPlayer("Benacio")
+        settings.addPlayer("Natalia")
+        @board.constructor(3,settings)
 
+        width=3
+        height=3
+        @board.generateBoard(width,height)
+        value=21
+        expect(@board.getTurn).to eq "A" #verificamos que el turno sea de jugador A
+
+        @board.checkLine(value)#ahora la cassilla pertenece al jugador A
+        expect(@board.getLine(value)).to eq "A"
+        
+        @board.turnOf
+        value=4
+        @board.checkLine(value)#ahora la cassilla pertenece al jugador B
+        expect(@board.getLine(value)).to eq "B"
+
+        @board.turnOf
+        value=12
+        @board.checkLine(value)#ahora la cassilla pertenece al jugador B
+        expect(@board.getLine(value)).to eq "C"
+    end
     
 end
