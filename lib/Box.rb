@@ -91,7 +91,26 @@ class Box
     def increaseNumberCheckLines
         @numberCheckLines+=1
     end
-
+    def checkLine(value,characterPlayer)
+        top=getIdTopLine
+        left=getIdLeftLine
+        right=getIdRightLine
+        bottom=getIdBottomLine
+        case value
+        when top
+            @topLine.setValue(characterPlayer)
+            increaseNumberCheckLines
+        when left
+            @leftLine.setValue(characterPlayer)
+            increaseNumberCheckLines            
+        when right
+            @rightLine.setValue(characterPlayer)
+            increaseNumberCheckLines            
+        when bottom
+            @bottonLine.setValue(characterPlayer)
+            increaseNumberCheckLines
+        end
+    end
     def paintBox(colorPlayer)
         @content=colorPlayer
     end

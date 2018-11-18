@@ -45,11 +45,9 @@ describe Box do
         expect(@box.getContent).to eq "A" 
     end
 
-    it "Obtener el valor una linea en especifico, verificando que pertenezca a una caja" do
+    it "Obtener el valor una linea en especifico, sabiendo que pertenece a una caja" do
         value=2
-        if(@box.isHere(value)==true)
-            expect(@box.getLine(value)).to eq 2
-        end
+        expect(@box.getLine(value)).to eq 2
     end
     it "Obtener la cantidad inicial 0 de lineas marcadas" do
         expect(@box.getNumberCheckLines).to eq 0
@@ -58,10 +56,16 @@ describe Box do
         @box.increaseNumberCheckLines
         expect(@box.getNumberCheckLines).to eq 1
     end
-    it "Pintar el contenido de una caja al marcar sus 4 lineas" do
+    
+    it "Marcar una linea de una caja" do
+        value=3
+        characterPlayer="A"
+        @box.checkLine(value,characterPlayer)
+        expect(@box.getLine(value)).to eq "A"
+    end
+    it "Pintar el contenido de una caja si tiene sus 4 lineas marcadas" do
         colorPlayer="background:#54ba9b;"# es el color verde
         @box.paintBox(colorPlayer)
         expect(@box.getContent).to eq colorPlayer#se verifica que el contenido de la caja se haya pintado
     end
-
 end
