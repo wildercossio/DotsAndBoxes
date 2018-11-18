@@ -11,6 +11,8 @@ class Box
 
         @bottomLine=Line.new
         @bottomLine.constructor(bottom)
+
+        @content=""
     end
     def getValueTopLine
         return @topLine.getValue
@@ -58,6 +60,6 @@ class Box
     end
     
     def getContent
-        return ""
+        return @content
     end
 end
