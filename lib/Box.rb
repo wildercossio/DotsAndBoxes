@@ -107,11 +107,14 @@ class Box
             @rightLine.setValue(characterPlayer)
             increaseNumberCheckLines            
         when bottom
-            @bottonLine.setValue(characterPlayer)
+            @bottomLine.setValue(characterPlayer)
             increaseNumberCheckLines
         end
     end
     def paintBox(colorPlayer)
-        @content=colorPlayer
+        if(@numberCheckLines==4)
+            @content=colorPlayer
+            increaseNumberCheckLines
+        end
     end
 end

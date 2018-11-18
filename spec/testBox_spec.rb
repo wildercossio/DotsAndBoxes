@@ -64,8 +64,14 @@ describe Box do
         expect(@box.getLine(value)).to eq "A"
     end
     it "Pintar el contenido de una caja si tiene sus 4 lineas marcadas" do
-        colorPlayer="background:#54ba9b;"# es el color verde
-        @box.paintBox(colorPlayer)
-        expect(@box.getContent).to eq colorPlayer#se verifica que el contenido de la caja se haya pintado
+        @box.checkLine(1,"B")
+        @box.checkLine(4,"C")
+        @box.checkLine(3,"D")
+        #como A fue el ultimo en hacer check en la ultima linea 
+        #libre de la caja, entonces la caja es del jugador A
+        @box.checkLine(2,"A")
+        colorPlayerA="background:#54ba9b;"# es el color verde de A
+        @box.paintBox(colorPlayerA)
+        expect(@box.getContent).to eq colorPlayerA#se verifica que el contenido de la caja se haya pintado
     end
 end
