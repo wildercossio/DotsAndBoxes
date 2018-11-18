@@ -41,4 +41,14 @@ describe Box do
     it "Obtener el contenido de una caja y que sea vacio" do
         expect(@box.getContent).to eq ""
     end
+    
+    it "Cambiar el contenido de una caja por el caracter de un jugador" do
+        #aclarar que los jugadores se diferencian por A B C D
+        itBelongsToMe="A"
+        @box.setContent(itBelongsToMe)#indicamos que le pertenece al jugador A
+        #elegi colocar caracteres(A,B,C,D) a los jugadores, para que se diferencien
+        #en caso de haber jugadores con el mismo nombre
+        expect(@box.getContent).to eq "A" 
+    end
+    
 end

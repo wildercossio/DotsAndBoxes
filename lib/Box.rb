@@ -62,4 +62,7 @@ class Box
     def getContent
         return @content
     end
+    def setContent(newContent)
+        @content=newContent
+    end
 end
