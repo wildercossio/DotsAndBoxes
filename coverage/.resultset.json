@@ -5,22 +5,31 @@
         1,
         1,
         1,
-        2,
-        2,
-        2,
+        3,
+        3,
+        3,
         null,
         1,
         1,
         null,
         1,
         1,
+        1,
+        1,
+        null,
+        1,
+        1,
+        null,
         null,
         null
       ],
       "C:/Users/Wil/Documents/DotsAndBoxes-1/lib/Line.rb": [
         1,
         1,
-        2,
+        3,
+        3,
+        null,
+        1,
         2,
         null,
         1,
@@ -28,6 +37,7 @@
         null,
         1,
         1,
+        null,
         null,
         null
       ],
@@ -93,6 +103,6 @@
         null
       ]
     },
-    "timestamp": 1542508137
+    "timestamp": 1542508424
   }
 }

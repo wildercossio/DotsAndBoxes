@@ -1,7 +1,7 @@
 class Line
-    def constructor(value)
-        @value=value
-        @id=value
+    def constructor(number)
+        @value=number
+        @id=number
     end
     def getValue
         return @value
@@ -9,4 +9,8 @@ class Line
     def getId
         return @id
     end
+    def setValue(number)
+        @value=number
+    end
+
 end
