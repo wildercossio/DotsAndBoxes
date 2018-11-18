@@ -1,15 +1,14 @@
 require "./lib/Line"
 describe Line do
+    before(:each) do
+        number=12
+        @line=Line.new
+        @line.constructor(number)
+    end
     it "Obtener el valor de una linea" do
-        value=1
-        line=Line.new
-        line.constructor(value)
-        expect(line.getValue).to eq 1
+        expect(@line.getValue).to eq 12
     end
     it "Obtener el id de una linea" do
-        id=1
-        line=Line.new
-        line.constructor(id)
-        expect(line.getId).to eq 1
+        expect(@line.getId).to eq 12
     end
 end
