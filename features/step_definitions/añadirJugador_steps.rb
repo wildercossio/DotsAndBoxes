@@ -2,7 +2,7 @@ Given("visito la pagina Ajustes") do
     visit('/ajustes')
   end
   When("presiono el boton de {string}") do |boton|
-    click_button('Guardar')
+    click_button(boton)
   end
   Then("puedo ver el formulario con el titulo {string}") do |titulo|
     expect(page).to have_content(titulo)
@@ -14,3 +14,9 @@ Given("visito la pagina Ajustes") do
   Then("puedo ver en pantalla el jugador {string} que añadi") do |jugador|
     expect(page).to have_content(jugador)
   end
+
+  When("presiono el boton de la parte inferior {string}") do |boton|
+    click_link(boton)
+  end
+  
+  
