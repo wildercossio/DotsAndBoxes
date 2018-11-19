@@ -25,3 +25,10 @@ Given("visito la pagina Ajustes y registre 2 judadores previamente") do
     expect(page).to have_css(tablero)
   end
   
+  Then("puedo ver en pantalla el puntaje inicial de Juan en {string}") do |puntaje|
+    expect(page).to have_content(puntaje)
+  end
+  
+  Then("puedo ver en pantalla el puntaje inicial de Pablo en {string}") do |puntaje|
+    expect(page).to have_content(puntaje)
+  end

@@ -64,9 +64,10 @@ class App < Sinatra::Base
     end
 
     post '/addPlayer' do
-        
-        $numberPlayers+=1
-        $settings.addPlayer(params[:nombre])       
+        if($numberPlayers<4)
+            $numberPlayers+=1
+            $settings.addPlayer(params[:nombre])
+        end       
         $players=$settings.getPlayersAdded
         erb :ajustes
     end

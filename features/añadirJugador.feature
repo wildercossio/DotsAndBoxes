@@ -17,3 +17,11 @@ Feature: Añadir un jugador
         When ingreso el nombre "Tatiana" para "nombre"
         And presiono el boton de "Guardar"
         Then puedo ver en pantalla el jugador "Tatiana" que añadi
+
+        When ingreso el nombre "Juan" para "nombre"
+        And presiono el boton de "Guardar"
+        Then puedo ver en pantalla el jugador "Juan" que añadi
+
+        When ingreso el nombre "Pablo" para "nombre"
+        And presiono el boton de "Guardar"
+        Then puedo ver en pantalla el jugador "Pablo" que añadi
