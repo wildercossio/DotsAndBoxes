@@ -17,16 +17,21 @@
         <table>
             <tr>
                 <td>
-                    <h2>Añade un jugador</h2>
+                    
+                    <%if($numberPlayers<4)%>
+                        <h2>Añade un jugador</h2>
+                    <%end%>
                 </td>
             </tr>
             <tr>
                 <td>
-                    <form method="post" action="/addPlayer">
-                        <label for="player">Nombre:</label>
-                        <input type="text" name="nombre" required maxlength="12" placeholder="ingresa tu nombre">
-                        <input type="submit" class="addUserButton"  name="guardar" value="Guardar">
-                    </form
+                    <%if($numberPlayers<4)%>
+                        <form method="post" action="/addPlayer">
+                            <label for="player">Nombre:</label>
+                            <input type="text" name="nombre" required maxlength="12" placeholder="ingresa tu nombre">
+                            <input type="submit" class="addUserButton"  name="guardar" value="Guardar">
+                        </form
+                    <%end%>
                 </td>
             </tr>
             <tr>
