@@ -18,13 +18,12 @@ class App < Sinatra::Base
         erb :principal
     end
     get '/deleteAll' do
-        clearGame=Board.new
-        $game=clearGame
-        clearSettings=Settings.new
-        $settings=clearSettings
+        $game=Board.new
+        $settings=Settings.new
+        $settings.constructor
         $numberPlayers=0
         $players.clear
-
+        $settings.resetNumberPlayers
         erb :principal
     end
     get '/restartGame' do
