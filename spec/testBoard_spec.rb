@@ -325,5 +325,49 @@ describe Board do
         @board.calculteScore
        expect(@board.getScoreOf(playerB)).to eq 1#el puntaje del jugador B se incremento en 1
     end
-    
+    it "Reiniciar partida,verificamos que los puntajes esten en 0 y el tablero sin jugadas, ni cajas pintadas" do
+        @board=Board.new
+        settings=Settings.new
+        settings.constructor
+        settings.addPlayer("Natalia")
+        settings.addPlayer("Tatiana")
+        players=settings.getPlayersAdded
+        @board.constructor(2,settings)
+        width=3
+        height=3
+
+
+        #-----------------Codigo para pintar una caja y mas sus jugadas
+        
+        @board.generateBoard(width,height)
+        @board.checkLine(1)#ahora la cassilla pertenece al jugador A
+        @board.turnOf
+        @board.checkLine(4)#ahora la cassilla pertenece al jugador B
+        @board.turnOf
+        @board.checkLine(5)#ahora la cassilla pertenece al jugador A
+        @board.turnOf
+        @board.checkLine(8)#ahora la cassilla pertenece al jugador B
+        @board.paintBoxes
+        # se revisa que cajas tienen las 4 lineas marcadas y se las pinta del correspondiente al jugador
+        playerB=2
+        expect(@board.getScoreOf(playerB)).to eq 0#incialmente su score esta en 0
+        @board.calculteScore#el puntaje del jugador B se incremento en 1
+       expect(@board.getScoreOf(playerB)).to eq 1
+
+
+        #-----------------------------------------------------------------
+        #se vuelve a generar otra matriz 
+        @board.generateBoard(width,height)
+        for row in(0..(height-1))
+            for col in(0..(width-1))
+                expect(@board.getContent(row,col)).to eq ""
+            end
+        end
+        #se resetea el puntaje a 0
+        @board.resetScore
+        # verificando que sea 0
+        for index in(0..1)
+            expect(@board.getScoreOf(index)).to eq 0
+        end
+    end
 end

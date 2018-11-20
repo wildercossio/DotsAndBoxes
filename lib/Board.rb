@@ -10,6 +10,12 @@ class Board
         @playerColor=@players[0].getColor
         @numberOfPlayers=numberOfPlayers
     end
+    def resetScore
+        for index in(0..(@numberOfPlayers-1))
+            @players[index].restartScoreToZero
+        end
+    end
+
     def getScoreOf(pos)
         return @players[pos-1].getScore
     end
