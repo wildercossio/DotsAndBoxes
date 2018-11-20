@@ -22,7 +22,8 @@ Feature: Añadir un jugador
         And puedo ver en pantalla el turno "Turno de: Natalia"
         And puedo ver en pantalla el tablero "table"
 
-    Scenario: inciar el juego
+
+
         
        
 

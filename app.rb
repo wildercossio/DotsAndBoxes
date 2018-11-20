@@ -17,7 +17,50 @@ class App < Sinatra::Base
     get '/principal' do
         erb :principal
     end
-    get '/jugarConAmigos' do
+    get '/restartGame' do
+        $game.resetScore
+        $game.generateBoard(3,3)
+        $game.setTurn("A")
+        $turn=$game.getTurn
+        $value1=$game.getLine(1)
+        $value2=$game.getLine(2)
+        $value3=$game.getLine(3)
+        $value4=$game.getLine(4)
+        $value5=$game.getLine(5)
+        $value6=$game.getLine(6)
+        $value7=$game.getLine(7)
+        $value8=$game.getLine(8)
+        $value9=$game.getLine(9)
+        $value10=$game.getLine(10)
+        $value11=$game.getLine(11)
+        $value12=$game.getLine(12)
+        $value13=$game.getLine(13)
+        $value14=$game.getLine(14)
+        $value15=$game.getLine(15)
+        $value16=$game.getLine(16)
+        $value17=$game.getLine(17)
+        $value18=$game.getLine(18)
+        $value19=$game.getLine(19)
+        $value20=$game.getLine(20)
+        $value21=$game.getLine(21)
+        $value22=$game.getLine(22)
+        $value23=$game.getLine(23)
+        $value24=$game.getLine(24)
+        
+        
+        $content1=$game.getContent(0,0)
+        $content2=$game.getContent(0,1)
+        $content3=$game.getContent(0,2)
+        $content4=$game.getContent(1,0)
+        $content5=$game.getContent(1,1)
+        $content6=$game.getContent(1,2)
+        $content7=$game.getContent(2,0)
+        $content8=$game.getContent(2,1)
+        $content9=$game.getContent(2,2)
+        erb :jugarConAmigos
+    end
+
+    get '/drawGame' do
         $game.constructor($numberPlayers,$settings)#tamaño del tablero es 3*3 cajas
         $game.generateBoard(3,3)
         $turn=$game.getTurn
