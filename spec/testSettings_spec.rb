@@ -5,7 +5,11 @@ describe Settings do
         @settings=Settings.new
         @settings.constructor
     end
-    it "Obtener la cantidad de jaugadores inicial 0" do
+    it "el vector de jugadores deberia estar vacio" do
+        expect(@settings.playersAddedisEmpty).to eq true
+    end
+
+    it "Obtener la cantidad de jugadores inicial 0" do
         expect(@settings.getNumberPlayers).to eq 0
     end
     it "Incrementar la cantidad de jugadores en 1" do
@@ -36,7 +40,5 @@ describe Settings do
         #no pude continuar porque no encontre la forma de comparar dos vectores
     end
 
-    it "el vector de jugadores deberia estar vacio" do
-        expect(@settings.playersAddedisEmpty).to eq true
-    end
+
 end
