@@ -10,7 +10,13 @@ class Board
         @playerColor=@players[0].getColor
         @numberOfPlayers=numberOfPlayers
     end
+    def deleteAllUsers
+        @players.clear
+    end
 
+    def isPlayersEmpty
+        @players.empty?
+    end
     def setTurn(newTurn)
         @player=newTurn
     end

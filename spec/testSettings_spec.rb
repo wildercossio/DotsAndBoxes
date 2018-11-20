@@ -5,9 +5,6 @@ describe Settings do
         @settings=Settings.new
         @settings.constructor
     end
-    it "el vector de jugadores deberia estar vacio" do
-        expect(@settings.playersAddedisEmpty).to eq true
-    end
 
     it "Obtener la cantidad de jugadores inicial 0" do
         expect(@settings.getNumberPlayers).to eq 0
