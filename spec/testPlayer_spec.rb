@@ -26,5 +26,14 @@ describe Player do
         expect(@player.getScore).to eq 1
     end
 
+    it "reiniciar el score a 0" do
+        @player.increaseScore#1
+        @player.increaseScore#2
+        @player.increaseScore#3
+        @player.increaseScore#4
+        expect(@player.getScore).to eq 4
+        @player.restartScoreToZero
+        expect(@player.getScore).to eq 0
+    end
 
 end

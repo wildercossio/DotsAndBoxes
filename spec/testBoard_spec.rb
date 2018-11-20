@@ -325,4 +325,5 @@ describe Board do
         @board.calculteScore
        expect(@board.getScoreOf(playerB)).to eq 1#el puntaje del jugador B se incremento en 1
     end
+    
 end

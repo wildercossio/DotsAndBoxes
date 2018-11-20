@@ -24,4 +24,7 @@
         return @score
     end
 
+    def restartScoreToZero
+        @score=0
+    end
 end
