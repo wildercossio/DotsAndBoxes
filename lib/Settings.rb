@@ -13,7 +13,9 @@ class Settings
         @playersAdded[@numberPlayers].constructor(name,color,character)
         increaseNumberPlayers
     end
-
+    def resetNumberPlayers
+        @numberPlayers=0
+    end
     def increaseNumberPlayers
         @numberPlayers+=1
     end

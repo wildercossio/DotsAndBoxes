@@ -17,6 +17,16 @@ class App < Sinatra::Base
     get '/principal' do
         erb :principal
     end
+    get '/deleteAll' do
+        clearGame=Board.new
+        $game=clearGame
+        clearSettings=Settings.new
+        $settings=clearSettings
+        $numberPlayers=0
+        $players.clear
+
+        erb :principal
+    end
     get '/restartGame' do
         $game.resetScore
         $game.generateBoard(3,3)

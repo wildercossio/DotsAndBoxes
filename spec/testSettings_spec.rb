@@ -13,6 +13,14 @@ describe Settings do
         @settings.increaseNumberPlayers
         expect(@settings.getNumberPlayers).to eq 1
     end
+    it "Poner en 0 la cantidad de jugadores" do
+        @settings.increaseNumberPlayers
+        @settings.increaseNumberPlayers
+        @settings.increaseNumberPlayers
+        expect(@settings.getNumberPlayers).to eq 3
+        @settings.resetNumberPlayers
+        expect(@settings.getNumberPlayers).to eq 0
+    end
 
     it "Añadir un jugador" do
         @settings.addPlayer("Rosendo")
