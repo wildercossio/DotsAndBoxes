@@ -14,6 +14,10 @@ class Settings
         increaseNumberPlayers
     end
 
+    def playersAddedisEmpty
+        @playersAdded.empty?
+    end
+
     def increaseNumberPlayers
         @numberPlayers+=1
     end

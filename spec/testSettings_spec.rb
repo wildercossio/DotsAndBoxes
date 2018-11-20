@@ -35,4 +35,8 @@ describe Settings do
         #expect(players).to contain_exactly(player1,player2)
         #no pude continuar porque no encontre la forma de comparar dos vectores
     end
+
+    it "el vector de jugadores deberia estar vacio" do
+        expect(@settings.playersAddedisEmpty).to eq true
+    end
 end

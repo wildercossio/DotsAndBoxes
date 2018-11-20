@@ -370,4 +370,6 @@ describe Board do
             expect(@board.getScoreOf(index)).to eq 0
         end
     end
+
+    
 end
