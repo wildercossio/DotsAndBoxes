@@ -6,44 +6,83 @@ describe Settings do
         @settings.constructor
     end
 
-    it "Obtener la cantidad de jugadores inicial 0" do
-        expect(@settings.getNumberPlayers).to eq 0
+    it "El vector de jugadores deberia estar vacia" do
+        expect(@settings.isListEmpty).to eq true
     end
-    it "Incrementar la cantidad de jugadores en 1" do
-        @settings.increaseNumberPlayers
+
+    it "Al añadir un jugador, el vector deberia estar vacio" do
+        player=Player.new
+        player.constructor("Juan","background:#54ba9b;","A",0)
+        @settings.addPlayer(player)
+        expect(@settings.isListEmpty).to eq false
+    end
+    
+    it "Al añadir un jugador, el vector deberia tener 1 jugador" do
+        player=Player.new
+        player.constructor("Juan","background:#54ba9b;","A",0)
+        @settings.addPlayer(player)
         expect(@settings.getNumberPlayers).to eq 1
     end
-    it "Poner en 0 la cantidad de jugadores" do
-        @settings.increaseNumberPlayers
-        @settings.increaseNumberPlayers
-        @settings.increaseNumberPlayers
-        expect(@settings.getNumberPlayers).to eq 3
-        @settings.resetNumberPlayers
+
+    it "Al añadir 4 jugadores, el vector deberia tener 4 jugadores" do
+        player=Player.new
+        player.constructor("Juan","background:#54ba9b;","A",0)
+        @settings.addPlayer(player)
+        player.constructor("Pedro","background:#ff637d;","B",0)
+        @settings.addPlayer(player)
+        player.constructor("Carlos","background:#5473ba;","C",0)
+        @settings.addPlayer(player)
+        player.constructor("Sergio","background:#ba54a6;","D",0)
+        @settings.addPlayer(player)
+        expect(@settings.getNumberPlayers).to eq 4
+    end
+    it "Verificar que los jugadores, se añadieron correctamente" do
+        #jugadores añadidos
+        player=Player.new
+        player.constructor("Juan","background:#54ba9b;","A",0)
+        @settings.addPlayer(player)
+        player.constructor("Pedro","background:#ff637d;","B",0)
+        @settings.addPlayer(player)
+        player.constructor("Carlos","background:#5473ba;","C",0)
+        @settings.addPlayer(player)
+        player.constructor("Sergio","background:#ba54a6;","D",0)
+        @settings.addPlayer(player)
+        #lo obtenido
+        addPlayers=@settings.getPlayersAdded
+        #resultado esperado
+        expectedPlayers=create4Players
+        #comparando
+        for i in(0..3)
+            expect(@settings.compare(addPlayers[i],expectedPlayers[i])).to eq true
+        end
+    end
+    it "Al eliminar todos los jugadores añadidos, el vector deberia estar vacio" do
+        player=Player.new
+        player.constructor("Juan","background:#54ba9b;","A",0)
+        @settings.addPlayer(player)
+        player.constructor("Pedro","background:#ff637d;","B",0)
+        @settings.addPlayer(player)
+        player.constructor("Carlos","background:#5473ba;","C",0)
+        @settings.addPlayer(player)
+        player.constructor("Sergio","background:#ba54a6;","D",0)
+        @settings.addPlayer(player)
+        #eliminando todos
+        @settings.deleteAllPlayers
+        #####################
         expect(@settings.getNumberPlayers).to eq 0
     end
-
-    it "Añadir un jugador" do
-        @settings.addPlayer("Rosendo")
-        @settings.addPlayer("Benacio")
-        expect(@settings.getNumberPlayers).to eq 2
+    #metodos axiliares
+    def create4Players
+        expected=Array.new
+        player=Player.new
+        player.constructor("Juan","background:#54ba9b;","A",0)
+        expected.push(player)
+        player.constructor("Pedro","background:#ff637d;","B",0)
+        expected.push(player)
+        player.constructor("Carlos","background:#5473ba;","C",0)
+        expected.push(player)
+        player.constructor("Sergio","background:#ba54a6;","D",0)
+        expected.push(player)
+        return expected
     end
-
-    it "Obtener todos los jugadores añadidos" do
-        playersAdded=Array.new
-        player1=Player.new
-        player1.constructor("Tatiana","background:#54ba9b;","A")#(nombre,color,caracter distintivo)
-        player2=Player.new
-        player2.constructor("Natalia","background:#ff637d;","B")
-        playersAdded=[player1,player2]
-
-
-        @settings.addPlayer("Tatiana")
-        @settings.addPlayer("Natalia")
-        players=Array.new
-        players=@settings.getPlayersAdded
-        #expect(players).to contain_exactly(player1,player2)
-        #no pude continuar porque no encontre la forma de comparar dos vectores
-    end
-
-
 end

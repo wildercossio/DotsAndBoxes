@@ -3,12 +3,12 @@ describe Player do
 
     before(:each) do 
         @player=Player.new
-        @player.constructor("Bronzuna","background:#54ba9b;","A",0)
+        @player.constructor("Juan","background:#54ba9b;","A",0)
                            #(nombre, color, caracter del jugador, puntaje)
     end
 
     it "obtener el nombre de un jugador" do
-        expect(@player.getName).to eq "Bronzuna"
+        expect(@player.getName).to eq "Juan"
     end
     it "obtener el color de un jugador" do
         expect(@player.getColor).to eq "background:#54ba9b;"
