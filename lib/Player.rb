@@ -1,9 +1,9 @@
  class Player
-    def constructor(name,color,character)
+    def constructor(name,color,character,score)
         @name=name
         @color=color
         @character=character
-        @score=0
+        @score=score
     end
     
     def getName
@@ -15,14 +15,12 @@
     def getCharacter
         return @character
     end
-
-    def increaseScore
-        @score+=1
-    end
-
     def getScore
         return @score
     end
+    def increaseScore
+        @score+=1
+    end    
 
     def restartScoreToZero
         @score=0
