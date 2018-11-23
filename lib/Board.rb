@@ -6,17 +6,15 @@ class Board
         @width=0
         @height=0
         @players=settings.getPlayersAdded
-        @player=@players[0].getCharacter
-        @playerColor=@players[0].getColor
+        @player="A" #primer jugador siempre
+        @playerColor="background:#54ba9b;" #verde color del primer jugador
         @numberOfPlayers=numberOfPlayers
     end
     def deleteAllUsers
         @players.clear
+        return @players.empty?
     end
 
-    def isPlayersEmpty
-        @players.empty?
-    end
     def setTurn(newTurn)
         @player=newTurn
     end
@@ -32,7 +30,9 @@ class Board
     def getTurn
         return @player
     end
-
+    def getPlayerColor
+        return @playerColor
+    end
     def getNumberOfPlayers
         return @numberOfPlayers
     end
@@ -73,22 +73,27 @@ class Board
     def getLine(value)
         for row in(0..(@height-1))
             for col in(0..(@width-1))
-                if(@boxes[row][col].isHere(value)==true)
-                    return @boxes[row][col].getLine(value)
+                isHere=@boxes[row][col].getLine(value)
+                if(isHere!="not here")
+                    return isHere
                 end
             end
         end
-        return "doesNotExist"
+        return "not here"
     end
 
     def checkLine(value)
+        check=false
         for row in(0..(@height-1))
             for col in(0..(@width-1))
-                if(@boxes[row][col].isHere(value)==true)
+                isHere=@boxes[row][col].getLine(value)
+                if(isHere!="not here")
                     @boxes[row][col].checkLine(value,@player)
+                    check=true
                 end
             end
         end
+        return check
     end
     def turnOf
         case @numberOfPlayers

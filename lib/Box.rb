@@ -55,7 +55,7 @@ class Box
     def setContent(newContent)
         @content=newContent
     end
-
+    
     def getLine(value)
         top=getIdTopLine
         left=getIdLeftLine
