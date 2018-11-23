@@ -18,14 +18,14 @@
             <tr>
                 <td>
                     
-                    <%if($numberPlayers<4)%>
+                    <%if($tam<4)%>
                         <h2>Añade un jugador</h2>
                     <%end%>
                 </td>
             </tr>
             <tr>
                 <td>
-                    <%if($numberPlayers<4)%>
+                    <%if($tam<4)%>
                         <form method="post" action="/addPlayer">
                             <label for="player">Nombre:</label>
                             <input type="text" name="nombre" required maxlength="12" placeholder="ingresa tu nombre">
@@ -36,7 +36,7 @@
             </tr>
             <tr>
                 <td>
-                    <%if($numberPlayers>0)%>    
+                    <%if($tam>0)%>    
                         <div>
                             <% for i in(0..($players.size-1))%>
                             
@@ -51,7 +51,7 @@
             </tr>
             <tr>
                 <td>
-                    <%if($numberPlayers>1)%>
+                    <%if($tam>1)%>
                         <div class="divPlay">
                             <a class="playButton" href="/drawGame">Jugar</a>
                         </div>

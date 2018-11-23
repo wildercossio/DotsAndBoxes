@@ -1,11 +1,6 @@
 class Settings
     def constructor
         @playersAdded=Array.new
-        #@colors=["background:#54ba9b;","background:#ff637d;","background:#5473ba;","background:#ba54a6;"]
-                 #[verde,rojo,azul,lila]
-        
-        #@characters=["A","B","C","D"]
-                    #[jugador1,jugador2,jugador3,jugador4]
     end
     def addPlayer(player)
         @playersAdded.push(player) 

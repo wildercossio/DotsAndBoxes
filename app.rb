@@ -5,12 +5,17 @@ require './lib/Player'
 
 
 class App < Sinatra::Base
+    #inicializaciones
     $game=Board.new
     $settings=Settings.new
     $settings.constructor
     $players=Array.new
-    $numberPlayers=0
+    $tam=0
     $turn=""
+    $colors=["background:#54ba9b;","background:#ff637d;","background:#5473ba;","background:#ba54a6;"]
+    #[verde,rojo,azul,lila]
+    $characters=["A","B","C","D"]
+    #------------------------
     get '/' do
         erb :bienvenida
     end
@@ -21,9 +26,9 @@ class App < Sinatra::Base
         $game=Board.new
         $settings=Settings.new
         $settings.constructor
-        $numberPlayers=0
+        $tam=0
         $players.clear
-        $settings.resetNumberPlayers
+        $settings.deleteAllPlayers
         erb :principal
     end
     get '/restartGame' do
@@ -93,7 +98,7 @@ class App < Sinatra::Base
     end
 
     get '/drawGame' do
-        $game.constructor($numberPlayers,$settings)#tamaño del tablero es 3*3 cajas
+        $game.constructor($players.length,$settings)#tamaño del tablero es 3*3 cajas
         $game.generateBoard(4,4)
         $turn=$game.getTurn
         $value1=$game.getLine(1)
@@ -162,9 +167,12 @@ class App < Sinatra::Base
     end
 
     post '/addPlayer' do
-        if($numberPlayers<4)
-            $numberPlayers+=1
-            $settings.addPlayer(params[:nombre])
+        if($tam<4)
+            player=Player.new
+            score=0
+            player.constructor(params[:nombre],$colors[$tam],$characters[$tam],score)
+            $settings.addPlayer(player)
+            $tam+=1
         end       
         $players=$settings.getPlayersAdded
         erb :ajustes

@@ -47,7 +47,7 @@ describe Settings do
         @settings.addPlayer(player)
         player.constructor("Sergio","background:#ba54a6;","D",0)
         @settings.addPlayer(player)
-        #lo obtenido
+        #lo obtenido-jugadores añadidos
         addPlayers=@settings.getPlayersAdded
         #resultado esperado
         expectedPlayers=create4Players
