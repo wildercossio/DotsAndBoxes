@@ -6,25 +6,25 @@ describe Settings do
         @settings.constructor
     end
 
-    it "El vector de jugadores deberia estar vacia" do
+    it "Verificar que el vector de jugadores este vacio" do
         expect(@settings.isListEmpty).to eq true
     end
 
-    it "Al añadir un jugador, el vector deberia estar vacio" do
+    it "Verificar que al añadir un jugador, el vector no este vacio" do
         player=Player.new
         player.constructor("Juan","background:#54ba9b;","A",0)
         @settings.addPlayer(player)
         expect(@settings.isListEmpty).to eq false
     end
     
-    it "Al añadir un jugador, el vector deberia tener 1 jugador" do
+    it "Verificar que al añadir un jugador, el numero de jugadores sea 1" do
         player=Player.new
         player.constructor("Juan","background:#54ba9b;","A",0)
         @settings.addPlayer(player)
         expect(@settings.getNumberPlayers).to eq 1
     end
 
-    it "Al añadir 4 jugadores, el vector deberia tener 4 jugadores" do
+    it "Verificar que al añadir 4 jugadores, el vector tenga 4 jugadores" do
         player=Player.new
         player.constructor("Juan","background:#54ba9b;","A",0)
         @settings.addPlayer(player)
@@ -56,7 +56,7 @@ describe Settings do
             expect(@settings.compare(addPlayers[i],expectedPlayers[i])).to eq true
         end
     end
-    it "Al eliminar todos los jugadores añadidos, el vector deberia estar vacio" do
+    it "Verificar que al eliminar todos los jugadores añadidos, el vector deberia estar vacio" do
         player=Player.new
         player.constructor("Juan","background:#54ba9b;","A",0)
         @settings.addPlayer(player)
@@ -71,7 +71,7 @@ describe Settings do
         #####################
         expect(@settings.getNumberPlayers).to eq 0
     end
-    #metodos axiliares
+    #metodos auxiliares
     def create4Players
         expected=Array.new
         player=Player.new

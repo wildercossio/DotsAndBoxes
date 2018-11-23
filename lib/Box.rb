@@ -1,5 +1,5 @@
 class Box
-    def constructor(top,left,right,bottom)
+    def constructor(top,left,right,bottom,content,numberCheckLines,boxChecked)
         @topLine=Line.new
         @topLine.constructor(top)
 
@@ -12,15 +12,15 @@ class Box
         @bottomLine=Line.new
         @bottomLine.constructor(bottom)
 
-        @content=""
-        @numberCheckLines=0
-        @scoreAdded=false
+        @content=content
+        @numberCheckLines=numberCheckLines
+        @boxChecked=boxChecked
     end
-    def scoreAddedToPlayer
-        @scoreAdded=true
+    def boxChecked
+        @boxChecked=true
     end
-    def getSecoreAdded
-        return @scoreAdded
+    def getBoxChecked
+        return @boxChecked
     end
 
     def getValueTopLine
@@ -48,25 +48,6 @@ class Box
     def getIdBottomLine
         return @bottomLine.getId
     end
-    def isHere(value)
-        top=getIdTopLine
-        left=getIdLeftLine
-        right=getIdRightLine
-        bottom=getIdBottomLine
-
-        answer=false
-        case value
-        when top
-            answer=true
-        when left
-            answer=true
-        when right
-            answer=true
-        when bottom
-            answer=true
-        end
-        return answer
-    end
     
     def getContent
         return @content
@@ -89,7 +70,10 @@ class Box
             getValueRightLine
         when bottom
             getValueBottomLine
+        else
+            "not here"
         end
+        
     end
 
     def getNumberCheckLines

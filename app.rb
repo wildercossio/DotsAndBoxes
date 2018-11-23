@@ -169,8 +169,7 @@ class App < Sinatra::Base
     post '/addPlayer' do
         if($tam<4)
             player=Player.new
-            score=0
-            player.constructor(params[:nombre],$colors[$tam],$characters[$tam],score)
+            player.constructor(params[:nombre],$colors[$tam],$characters[$tam],0)
             $settings.addPlayer(player)
             $tam+=1
         end       

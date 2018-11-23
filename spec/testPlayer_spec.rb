@@ -7,24 +7,24 @@ describe Player do
                            #(nombre, color, caracter del jugador, puntaje)
     end
 
-    it "obtener el nombre de un jugador" do
+    it "Verificar que el nombre del jugador sea el esperado" do
         expect(@player.getName).to eq "Juan"
     end
-    it "obtener el color de un jugador" do
+    it "Verificar que el color del jugador sea el esperado" do
         expect(@player.getColor).to eq "background:#54ba9b;"
     end
-    it "obtener el caracter de un jugador" do
+    it "Verificar que el caracter del jugador sea el esperado" do
         expect(@player.getCharacter).to eq "A"
     end
     it "verificar que el puntaje inicial del jugador sea 0" do
         expect(@player.getScore).to eq 0
     end
-    it "incrementar en 1 el puntaje de un jugador" do
+    it "Verificar que el puntaje del jugador incremente en 1" do
         @player.increaseScore
         expect(@player.getScore).to eq 1
     end
 
-    it "reiniciar el score a 0" do
+    it "Verificar que el puntaje del jugador se reinicie a 0" do
         @player.increaseScore
         @player.increaseScore
         @player.increaseScore#se incrementa el score = 4
