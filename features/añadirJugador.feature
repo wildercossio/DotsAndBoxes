@@ -3,7 +3,7 @@ Feature: Añadir un jugador
     Quiero añadir un jugador
     Para poder jugar DOTS and BOXES
 
-    Scenario: veo en pantalla el titulo del formulario 
+    Scenario: ver en pantalla el titulo del formulario 
         Given visito la pagina Ajustes
         Then puedo ver el formulario con el titulo "Añade un jugador"
         

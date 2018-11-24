@@ -1,4 +1,4 @@
-Feature: Menu principal
+Feature: ir a menu principal
     Como jugador
     Quiero ver el menu principal
     Para ver las opciones disponibles
