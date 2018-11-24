@@ -3,11 +3,11 @@ Feature: Añadir un jugador
     Quiero ver la pagina de Jugar con amigos
     Para poder jugar 
         
-    Scenario: registrar al menos 2 jugadores para que aparezca la opcion jugar y luego vea la pagina Jugar con amigos
+    Scenario: ver el titulo de la pagina
         Given visito la pagina Ajustes y registre 2 judadores previamente
         When presiono el boton de la parte inferior "Jugar"
         Then puedo ver la pagina con el titulo "Jugar con amigos"
-
+    Scenario: ver nombre del primer jugador
         And puedo ver en pantalla el jugador ingresado "Natalia"
         And puedo ver en pantalla el puntaje inicial de Natalia en "0"
 
