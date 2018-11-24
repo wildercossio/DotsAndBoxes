@@ -182,7 +182,7 @@ class App < Sinatra::Base
         $game.paintBoxes
         $game.calculteScore
         $content1=$game.getContent(0,0)
-        $game.turnOf
+        $game.nextPlayer
         $turn=$game.getTurn
         $value1=$game.getLine(1)
         erb :jugarConAmigos
@@ -194,7 +194,7 @@ class App < Sinatra::Base
         $game.paintBoxes
         $game.calculteScore
         $content2=$game.getContent(0,1)
-        $game.turnOf
+        $game.nextPlayer
         $turn=$game.getTurn
         $value2=$game.getLine(2)
         erb :jugarConAmigos
@@ -206,7 +206,7 @@ class App < Sinatra::Base
         $game.paintBoxes
         $game.calculteScore
         $content3=$game.getContent(0,2)
-        $game.turnOf
+        $game.nextPlayer
         $turn=$game.getTurn  
         $value3=$game.getLine(3)
         erb :jugarConAmigos
@@ -218,7 +218,7 @@ class App < Sinatra::Base
         $game.paintBoxes
         $game.calculteScore
         $content4=$game.getContent(0,3)
-        $game.turnOf
+        $game.nextPlayer
         $turn=$game.getTurn
         $value4=$game.getLine(4)
         erb :jugarConAmigos
@@ -230,7 +230,7 @@ class App < Sinatra::Base
         $game.paintBoxes
         $game.calculteScore
         $content1=$game.getContent(0,0)
-        $game.turnOf
+        $game.nextPlayer
         $turn=$game.getTurn
         $value5=$game.getLine(5)
         erb :jugarConAmigos
@@ -243,7 +243,7 @@ class App < Sinatra::Base
         $game.calculteScore
         $content1=$game.getContent(0,0)
         $content2=$game.getContent(0,1)
-        $game.turnOf
+        $game.nextPlayer
         $turn=$game.getTurn
         $value6=$game.getLine(6)
         erb :jugarConAmigos
@@ -256,7 +256,7 @@ class App < Sinatra::Base
         $game.calculteScore
         $content2=$game.getContent(0,1)
         $content3=$game.getContent(0,2)
-        $game.turnOf
+        $game.nextPlayer
         $turn=$game.getTurn
         $value7=$game.getLine(7)
         erb :jugarConAmigos
@@ -269,7 +269,7 @@ class App < Sinatra::Base
         $game.calculteScore
         $content3=$game.getContent(0,2)
         $content4=$game.getContent(0,3)
-        $game.turnOf
+        $game.nextPlayer
         $turn=$game.getTurn
         $value8=$game.getLine(8)
         erb :jugarConAmigos
@@ -281,7 +281,7 @@ class App < Sinatra::Base
         $game.paintBoxes
         $game.calculteScore
         $content4=$game.getContent(0,3)
-        $game.turnOf
+        $game.nextPlayer
         $turn=$game.getTurn
         $value9=$game.getLine(9)
         erb :jugarConAmigos
@@ -294,7 +294,7 @@ class App < Sinatra::Base
         $game.calculteScore
         $content1=$game.getContent(0,0)
         $content5=$game.getContent(1,0)
-        $game.turnOf
+        $game.nextPlayer
         $turn=$game.getTurn
         $value10=$game.getLine(10)
         erb :jugarConAmigos
@@ -306,7 +306,7 @@ class App < Sinatra::Base
         $game.calculteScore
         $content2=$game.getContent(0,1)
         $content6=$game.getContent(1,1)
-        $game.turnOf
+        $game.nextPlayer
         $turn=$game.getTurn
         $value11=$game.getLine(11)
         erb :jugarConAmigos
@@ -318,7 +318,7 @@ class App < Sinatra::Base
         $game.calculteScore
         $content3=$game.getContent(0,2)
         $content7=$game.getContent(1,2)
-        $game.turnOf
+        $game.nextPlayer
         $turn=$game.getTurn
         $value12=$game.getLine(12)
         erb :jugarConAmigos
@@ -333,7 +333,7 @@ class App < Sinatra::Base
         $game.calculteScore
         $content4=$game.getContent(0,3)
         $content8=$game.getContent(1,3)
-        $game.turnOf
+        $game.nextPlayer
         $turn=$game.getTurn
         $value13=$game.getLine(13)
         erb :jugarConAmigos
@@ -344,7 +344,7 @@ class App < Sinatra::Base
         $game.paintBoxes
         $game.calculteScore
         $content5=$game.getContent(1,0)
-        $game.turnOf
+        $game.nextPlayer
         $turn=$game.getTurn
         $value14=$game.getLine(14)
         erb :jugarConAmigos
@@ -356,7 +356,7 @@ class App < Sinatra::Base
         $game.calculteScore
         $content5=$game.getContent(1,0)
         $content6=$game.getContent(1,1)
-        $game.turnOf
+        $game.nextPlayer
         $turn=$game.getTurn
         $value15=$game.getLine(15)
         erb :jugarConAmigos
@@ -368,7 +368,7 @@ class App < Sinatra::Base
         $game.calculteScore
         $content6=$game.getContent(1,1)
         $content7=$game.getContent(1,2)
-        $game.turnOf
+        $game.nextPlayer
         $turn=$game.getTurn
         $value16=$game.getLine(16)
         erb :jugarConAmigos
@@ -380,7 +380,7 @@ class App < Sinatra::Base
         $game.calculteScore
         $content7=$game.getContent(1,2)
         $content8=$game.getContent(1,3)
-        $game.turnOf
+        $game.nextPlayer
         $turn=$game.getTurn
         $value17=$game.getLine(17)
         erb :jugarConAmigos
@@ -391,7 +391,7 @@ class App < Sinatra::Base
         $game.paintBoxes
         $game.calculteScore
         $content8=$game.getContent(1,3)
-        $game.turnOf
+        $game.nextPlayer
         $turn=$game.getTurn
         $value18=$game.getLine(18)
         erb :jugarConAmigos
@@ -403,7 +403,7 @@ class App < Sinatra::Base
         $game.calculteScore
         $content5=$game.getContent(1,0)
         $content9=$game.getContent(2,0)
-        $game.turnOf
+        $game.nextPlayer
         $turn=$game.getTurn
         $value19=$game.getLine(19)
         erb :jugarConAmigos
@@ -415,7 +415,7 @@ class App < Sinatra::Base
         $game.calculteScore
         $content6=$game.getContent(1,1)
         $content10=$game.getContent(2,1)
-        $game.turnOf
+        $game.nextPlayer
         $turn=$game.getTurn
         $value20=$game.getLine(20)
         erb :jugarConAmigos
@@ -427,7 +427,7 @@ class App < Sinatra::Base
         $game.calculteScore
         $content7=$game.getContent(1,2)
         $content11=$game.getContent(2,2)
-        $game.turnOf
+        $game.nextPlayer
         $turn=$game.getTurn
         $value21=$game.getLine(21)
         erb :jugarConAmigos
@@ -439,7 +439,7 @@ class App < Sinatra::Base
         $game.calculteScore
         $content8=$game.getContent(1,3)
         $content12=$game.getContent(2,3)
-        $game.turnOf
+        $game.nextPlayer
         $turn=$game.getTurn
         $value22=$game.getLine(22)
         erb :jugarConAmigos
@@ -450,7 +450,7 @@ class App < Sinatra::Base
         $game.paintBoxes
         $game.calculteScore
         $content9=$game.getContent(2,0)
-        $game.turnOf
+        $game.nextPlayer
         $turn=$game.getTurn
         $value23=$game.getLine(23)
         erb :jugarConAmigos
@@ -462,7 +462,7 @@ class App < Sinatra::Base
         $game.calculteScore
         $content9=$game.getContent(2,0)
         $content10=$game.getContent(2,1)
-        $game.turnOf
+        $game.nextPlayer
         $turn=$game.getTurn
         $value24=$game.getLine(24)
         erb :jugarConAmigos
@@ -474,7 +474,7 @@ class App < Sinatra::Base
         $game.calculteScore
         $content10=$game.getContent(2,1)
         $content11=$game.getContent(2,2)
-        $game.turnOf
+        $game.nextPlayer
         $turn=$game.getTurn
         $value25=$game.getLine(25)
         erb :jugarConAmigos
@@ -486,7 +486,7 @@ class App < Sinatra::Base
         $game.calculteScore
         $content11=$game.getContent(2,2)
         $content12=$game.getContent(2,3)
-        $game.turnOf
+        $game.nextPlayer
         $turn=$game.getTurn
         $value26=$game.getLine(26)
         erb :jugarConAmigos
@@ -497,7 +497,7 @@ class App < Sinatra::Base
         $game.paintBoxes
         $game.calculteScore
         $content12=$game.getContent(2,3)
-        $game.turnOf
+        $game.nextPlayer
         $turn=$game.getTurn
         $value27=$game.getLine(27)
         erb :jugarConAmigos
@@ -509,7 +509,7 @@ class App < Sinatra::Base
         $game.calculteScore
         $content9=$game.getContent(2,0)
         $content13=$game.getContent(3,0)
-        $game.turnOf
+        $game.nextPlayer
         $turn=$game.getTurn
         $value28=$game.getLine(28)
         erb :jugarConAmigos
@@ -521,7 +521,7 @@ class App < Sinatra::Base
         $game.calculteScore
         $content10=$game.getContent(2,1)
         $content14=$game.getContent(3,1)
-        $game.turnOf
+        $game.nextPlayer
         $turn=$game.getTurn
         $value29=$game.getLine(29)
         erb :jugarConAmigos
@@ -533,7 +533,7 @@ class App < Sinatra::Base
         $game.calculteScore
         $content11=$game.getContent(2,2)
         $content15=$game.getContent(3,2)
-        $game.turnOf
+        $game.nextPlayer
         $turn=$game.getTurn
         $value30=$game.getLine(30)
         erb :jugarConAmigos
@@ -545,7 +545,7 @@ class App < Sinatra::Base
         $game.calculteScore
         $content12=$game.getContent(2,3)
         $content16=$game.getContent(3,3)
-        $game.turnOf
+        $game.nextPlayer
         $turn=$game.getTurn
         $value31=$game.getLine(31)
         erb :jugarConAmigos
@@ -555,7 +555,7 @@ class App < Sinatra::Base
         $game.paintBoxes
         $game.calculteScore
         $content13=$game.getContent(3,0)
-        $game.turnOf
+        $game.nextPlayer
         $turn=$game.getTurn
         $value32=$game.getLine(32)
         erb :jugarConAmigos
@@ -566,7 +566,7 @@ class App < Sinatra::Base
         $game.calculteScore
         $content13=$game.getContent(3,0)
         $content14=$game.getContent(3,1)
-        $game.turnOf
+        $game.nextPlayer
         $turn=$game.getTurn
         $value33=$game.getLine(33)
         erb :jugarConAmigos
@@ -577,7 +577,7 @@ class App < Sinatra::Base
         $game.calculteScore
         $content14=$game.getContent(3,1)
         $content15=$game.getContent(3,2)
-        $game.turnOf
+        $game.nextPlayer
         $turn=$game.getTurn
         $value34=$game.getLine(34)
         erb :jugarConAmigos
@@ -588,7 +588,7 @@ class App < Sinatra::Base
         $game.calculteScore
         $content15=$game.getContent(3,2)
         $content16=$game.getContent(3,3)
-        $game.turnOf
+        $game.nextPlayer
         $turn=$game.getTurn
         $value35=$game.getLine(35)
         erb :jugarConAmigos
@@ -598,7 +598,7 @@ class App < Sinatra::Base
         $game.paintBoxes
         $game.calculteScore
         $content16=$game.getContent(3,3)
-        $game.turnOf
+        $game.nextPlayer
         $turn=$game.getTurn
         $value36=$game.getLine(36)
         erb :jugarConAmigos
@@ -608,7 +608,7 @@ class App < Sinatra::Base
         $game.paintBoxes
         $game.calculteScore
         $content13=$game.getContent(3,0)
-        $game.turnOf
+        $game.nextPlayer
         $turn=$game.getTurn
         $value37=$game.getLine(37)
         erb :jugarConAmigos
@@ -618,7 +618,7 @@ class App < Sinatra::Base
         $game.paintBoxes
         $game.calculteScore
         $content14=$game.getContent(3,1)
-        $game.turnOf
+        $game.nextPlayer
         $turn=$game.getTurn
         $value38=$game.getLine(38)
         erb :jugarConAmigos
@@ -628,7 +628,7 @@ class App < Sinatra::Base
         $game.paintBoxes
         $game.calculteScore
         $content15=$game.getContent(3,2)
-        $game.turnOf
+        $game.nextPlayer
         $turn=$game.getTurn
         $value39=$game.getLine(39)
         erb :jugarConAmigos
@@ -638,7 +638,7 @@ class App < Sinatra::Base
         $game.paintBoxes
         $game.calculteScore
         $content16=$game.getContent(3,3)
-        $game.turnOf
+        $game.nextPlayer
         $turn=$game.getTurn
         $value40=$game.getLine(40)
         erb :jugarConAmigos

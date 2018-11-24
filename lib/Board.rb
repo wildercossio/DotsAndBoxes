@@ -24,7 +24,7 @@ class Board
         end
     end
 
-    def getScoreOf(pos)
+    def getScoreOfPlayer(pos)
         return @players[pos-1].getScore
     end
     def getTurn
@@ -95,7 +95,7 @@ class Board
         end
         return check
     end
-    def turnOf
+    def nextPlayer
         case @numberOfPlayers
         when 2
             playWith2players
