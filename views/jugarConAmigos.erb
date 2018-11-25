@@ -56,11 +56,11 @@
                     <td>
                         <%if ($value1==1)%>
                             <form method="post" action="/check1">
-                                <input class="horizontalLines" type="submit" value="">
+                                <input id="line1" class="horizontalLines" type="submit" value="">
                             </form>                
                         <%else%>
                             <form method="post" action="/check1">
-                                <input class="horizontal" type="submit" value="" disabled>
+                                <input id="continuosline1" class="horizontal" type="submit" value="" disabled>
                             </form> 
                         <%end%>
                     </td>
@@ -119,29 +119,29 @@
                     <td>
                         <%if($value5==5)%>
                             <form method="post" action="/check5">
-                                <input class="verticalLines" type="submit" value="">
+                                <input id="line5" class="verticalLines" type="submit" value="">
                             </form>
                         <%else%>
                             <form method="post" action="/check5">
-                                <input class="vertical" type="submit" value="" disabled>
+                                <input id="continuosline5" class="vertical" type="submit" value="" disabled>
                             </form>
                         <%end%>
                     </td>
         
                     <td>
                         <%if($content1!="")%>
-                            <input  class="contentBox" type="submit" style="<%=$content1%>" value="">
+                            <input id="box1"  class="contentBox" type="submit" style="<%=$content1%>" value="">
                         <%end%>
                     </td>
                     
                     <td>
                         <%if($value6==6)%>
                             <form method="post" action="/check6">
-                                <input class="verticalLines" type="submit" value="">
+                                <input id="line6" class="verticalLines" type="submit" value="">
                             </form>
                         <%else%>
                             <form method="post" action="/check6">
-                                <input class="vertical" type="submit" value="" disabled>
+                                <input id="continuosline6" class="vertical" type="submit" value="" disabled>
                             </form>
                         <%end%>
                     </td>
@@ -210,11 +210,11 @@
                     <td>
                         <%if($value10==10)%>
                             <form method="post" action="/check10">
-                                <input class="horizontalLines" type="submit" value="">
+                                <input id="line10" class="horizontalLines" type="submit" value="">
                             </form>
                         <%else%>
                             <form method="post" action="/check10">
-                                <input class="horizontal" type="submit" value="" disabled>
+                                <input id="continuosline10" class="horizontal" type="submit" value="" disabled>
                             </form>
                         <%end%>
                     </td>
