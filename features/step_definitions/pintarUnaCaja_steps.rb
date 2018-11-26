@@ -3,5 +3,5 @@ Given("visito la pagina jugarConAmigos") do
   end
   
   Then("deberia ver la caja pintada en el tablero {string}") do |cajaPintada|
-    find(cajaPintada).click
+    expect(page).to have_css(cajaPintada)
   end

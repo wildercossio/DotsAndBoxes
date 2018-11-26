@@ -9,3 +9,4 @@ Feature: cambiar el turno
         When presiono "Jugar"
         And presiono la jugada "input[id='line5']"
         Then deberia ver el turno "Turno de: Tatiana" porque es el primer jugador 
+        

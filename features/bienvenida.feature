@@ -7,3 +7,4 @@ Feature: Bienvenida
         Given visito la pagina Bienvenida
         Then deberia ver el texto de "Bienvenido!!"
         And deberia ver el titulo de "DOTS and BOXES"
+        And deberia ver la barra de carga ".progress-bar"
