@@ -8,6 +8,7 @@ Feature: Jugar
         Given visito la pagina de Ajustes
         When presiono "Jugar"
         Then deberia ver el titulo que dice "Jugar con amigos"
+        
 
     
 
