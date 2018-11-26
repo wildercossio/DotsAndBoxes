@@ -1,4 +1,4 @@
-Feature: Mostrar un jugador
+Feature: Mostrar puntaja de un jugador
 
    Como jugador
    Quiero ver mi puntaje
