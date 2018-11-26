@@ -11,7 +11,6 @@
     expect(page).to have_content(turno)
   end
 
-  When("el turno deberia ser de {string}") do |turno|
+  When("es el {string}") do |turno|
     expect(page).to have_content(turno)
   end
-  
